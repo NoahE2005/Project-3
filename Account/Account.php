@@ -80,7 +80,7 @@ function GetPic() {
 
         <div id="Reviews" class="tabcontent">
           <h1>Reviews</h1>
-          <div></div>
+          <div>
             <h2>Laaste reviews:</h2>
     <div class="ReviewTabelFlex">
     <?php
