@@ -227,7 +227,7 @@ Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier ku
   evt.currentTarget.className += " active";
 }
 <?php 
-if(isset($_GET['page'])) {
+if(isset($_GET['page']) && $_GET['page'] != "") {
   echo "openCity(event, '". $_GET['page'] ."');";
 }
 else {
