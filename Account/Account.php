@@ -33,14 +33,6 @@ function GetPic() {
   }
 }
 
-
-// function PHPUitloggen() {
-//   // unset($_SESSION['account_id']);
-//   // session_destroy();
-
-//   echo "<script>window.location.href = '/Project-3/Account/Account.php';</script>";
-//   header('Location: /Project-3/Account/Login.php');
-// }
 ?>
   <body>
   <?php require '../DatabasePuller.php'; ?>
@@ -155,25 +147,25 @@ Producten
 <div class='content'>
 <p>
 ";
-echo "<table>";
-$headers = array_keys($Product_All[0]);
+$headers = array_unique(array_keys($Product_All[0]));
 
+echo "<table>";
 echo "<tr>";
 foreach($headers as $header) {
-    echo "<td>";
+    echo "<th>";
     echo $header;
-    echo "</td>";
+    echo "</th>";
 }
 echo "</tr>";
 
 foreach($Product_All as $row) {
-echo "<tr>";
- foreach($row as $col) {
-  echo "<td>";
-  echo $col;
-  echo "</td>";
- }
-echo "</tr>";
+    echo "<tr>";
+    foreach($headers as $header) {
+        echo "<td>";
+        echo $row[$header];
+        echo "</td>";
+    }
+    echo "</tr>";
 }
 echo "</table>";
 echo
@@ -283,7 +275,18 @@ else {
 }
 
 table, tr, td {
-        border: 1px solid black;
+      border: 1px solid black;
+    }
+
+    tr, td {
+      min-height: 2vw;
+      height: 2vw;
+      padding: 0;
+      margin: 0;
+    }
+
+    td {
+      padding: 1vw;
     }
     </style>
 </html>

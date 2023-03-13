@@ -6,12 +6,14 @@ $username = "root";
 $password = "";
 $dbname = "project-3podsup";
 
+$page = $_GET["page"];
+
 session_start();
 if (isset($_SESSION['account_id'])) {
     $email = $Account_Email[$_SESSION['account_id']];
     $password = $Account_Password[$_SESSION['account_id']];
     echo "Session";
-    Verify($email, $password);
+    Verify($email, $password, $page);
 
     exit;
 } 
@@ -20,7 +22,7 @@ else if (isset($_GET['email']) && isset($_GET['password'])) {
     $email = $_GET['email'];
     $password = $_GET['password'];
     echo "Get";
-    Verify($email, $password);
+    Verify($email, $password, $page);
     exit;
 } 
 else if (isset($_POST['email']) && isset($_POST['password'])) {
@@ -28,7 +30,7 @@ else if (isset($_POST['email']) && isset($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
     echo "Post";
-    Verify($email, $password);
+    Verify($email, $password, $page);
     exit;
 }
 else {
@@ -38,7 +40,7 @@ else {
     exit;
 }
 
-function Verify($email, $password) {
+function Verify($email, $password ,$page) {
     global $Account_ID;
     global $Account_Email;
     global $Account_Password;
@@ -49,7 +51,7 @@ for ($i=0; $i < count($Account_ID); $i++) {
         $_SESSION['account_id'] = $Account_ID[$i] - 1;
         echo "Session set";
     } 
-        header('Location: /Project-3/Account/Account.php');
+        header('Location: /Project-3/Account/Account.php?page=' . $page . '');
         exit;
     }
     else {

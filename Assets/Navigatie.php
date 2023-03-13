@@ -41,12 +41,15 @@ if(session_status() !== PHP_SESSION_ACTIVE) {session_start();}
             <div class="dropdown" onclick="location.href='/Project-3/Account/Load_Account.php'">
             <button class="dropbtn"><i class="fa fa-user-circle Fa-Icon" style="font-size:2.5vw"></i></button>
             <?php if (isset($_SESSION['account_id'])) {
+                $ovz = "Overzicht";
+                $rev = "Reviews";
+                $set = "Settings";
                 echo '
                 <div class="dropdown-content">
                 <div class="dropdown-content2">
-                  <a href="/Project-3/Account/Load_Account.php?page=Overzicht">Overzicht</a>
-                  <a href="/Project-3/Account/Load_Account.php?page=Reviews">Reviews</a>
-                  <a href="/Project-3/Account/Load_Account.php?page=Settings">Settings</a>
+                  <a href="/Project-3/Account/Load_Account.php?page=' . $ovz .'">Overzicht</a>
+                  <a href="/Project-3/Account/Load_Account.php?page=' . $rev .'">Reviews</a>
+                  <a href="/Project-3/Account/Load_Account.php?page=' . $set .'">Settings</a>
                   <a href="/Project-3/Account/LogOut.php">Uitloggen</a>
               </div>
                 </div>
