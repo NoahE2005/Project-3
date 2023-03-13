@@ -129,8 +129,77 @@ function GetPic() {
             echo "
             <div id='AdminTools' class='tabcontent'>
             <h1>AdminTools</h1>
-            <!-- <p></p> -->
+            <p>
+
+
+            <button class='collapsible'>
+  <span class='icon'>&#9660;</span>
+  Hoe registreerd je brein smaak?
+</button>
+ <div class='content'>
+  <p>
+    Het merendeel van wat we proeven, komt van onze olfactorische receptoren (dat deel van ons lichaam dat een centrale rol speelt in ons gevoel van geur).
+
+    <br><br>
+
+   Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier kunnen we smaak aan water 'toevoegen'. Onze flessen zorgen ervoor dat de geur die in onze pods zit, geregistreerd kan worden met elke slok.
+  </p>
+ </div>
+
+
+
+<button class='collapsible'>
+<span class='icon'>&#9660;</span>
+Producten
+</button>
+<div class='content'>
+<p>
+";
+echo "<table>";
+$headers = array_keys($Product_All[0]);
+
+echo "<tr>";
+foreach($headers as $header) {
+    echo "<td>";
+    echo $header;
+    echo "</td>";
+}
+echo "</tr>";
+
+foreach($Product_All as $row) {
+echo "<tr>";
+ foreach($row as $col) {
+  echo "<td>";
+  echo $col;
+  echo "</td>";
+ }
+echo "</tr>";
+}
+echo "</table>";
+echo
+"
+</p>
+</div>
+
+
+<button class='collapsible'>
+<span class='icon'>&#9660;</span>
+Hoe registreerd je brein smaak?
+</button>
+<div class='content'>
+<p>
+  Het merendeel van wat we proeven, komt van onze olfactorische receptoren (dat deel van ons lichaam dat een centrale rol speelt in ons gevoel van geur).
+
+  <br><br>
+
+Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier kunnen we smaak aan water 'toevoegen'. Onze flessen zorgen ervoor dat de geur die in onze pods zit, geregistreerd kan worden met elke slok.
+</p>
+</div>
+
+            </p>
           </div>
+
+          <script src='../App.js'></script>
             ";
           }
           ?>
@@ -212,5 +281,9 @@ else {
 .ReviewTabelElement h1 {
   font-size: 1.5vw;
 }
+
+table, tr, td {
+        border: 1px solid black;
+    }
     </style>
 </html>

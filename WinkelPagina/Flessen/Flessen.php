@@ -51,7 +51,7 @@
         <p>
         $Product_Beschrijving[0]
         </p>
-        "; echo include '/Xampp/htdocs/Project-3/Assets/ToevoegenWinkelwagenButton.php';
+        "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
         $ID = $Product_ID[0]; echo"
     </div>
     <div>
@@ -73,7 +73,7 @@
                 <p>
                 $Product_Beschrijving[1]
                 </p>
-                "; echo include '/Xampp/htdocs/Project-3/Assets/ToevoegenWinkelwagenButton.php';
+                "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
                 $ID = $Product_ID[1]; echo"
             </div>
             <div>
@@ -111,7 +111,7 @@
         <p>
         $Product_Beschrijving[$i]
         </p>
-        "; echo include '/Xampp/htdocs/Project-3/Assets/ToevoegenWinkelwagenButton.php';
+        "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
         $ID = $Product_ID[$i]; echo"    
     </div>
     <div>

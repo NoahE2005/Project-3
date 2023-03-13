@@ -13,6 +13,7 @@ try {
     $result = $stmt->fetchAll();
 
     //Account array maken
+    $Account_All = $result;
     $Account_ID = [];
     $Account_Username = [];
     $Account_Email = [];
@@ -51,6 +52,7 @@ try {
     $result = $stmt->fetchAll();
 
     //Product array maken
+    $Product_All = $result;
     $Product_ID = [];
     $Product_Soort = [];
     $Product_Naam = [];
@@ -98,6 +100,7 @@ try {
     $result = $stmt->fetchAll();
 
     //Product array maken
+    $Reviews_All = $result;
     $Reviews_ID = [];
     $Reviews_Product_ID = [];
     $Reviews_Account_ID = [];

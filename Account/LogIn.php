@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="/Project-3/Account/AccountStylesheet.css">
   </head>
 <body>
-<?php include '../../Assets/Navigatie.php';?>
+<?php include '../Assets/Navigatie.php';?>
 <div class="MaintextAccount">
 
 <br><br><br>
@@ -32,6 +32,6 @@
 </div>
 
 <script src="../Account/App.js"></script>
-<?php include '../../Assets/Footer.php';?>
+<?php include '../Assets/Footer.php';?>
 </body>
 </html>

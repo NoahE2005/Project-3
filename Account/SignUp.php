@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // The rest of your code to create the account goes here
 }
 ?>
-<?php include '../../Assets/Navigatie.php';?>
+<?php include '../Assets/Navigatie.php';?>
 <div class="MaintextAccount">
 
 <br><br><br>
@@ -44,6 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <script src="../Account/App.js"></script>
-<?php include '../../Assets/Footer.php';?>
+<?php include '../Assets/Footer.php';?>
 </body>
 </html>

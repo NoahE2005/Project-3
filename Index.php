@@ -13,10 +13,21 @@
 <?php include '../Project-3/Assets/Navigatie.php';?>
 
     <main>
-      <div>
+      <div class="HeaderPurple">
         <h1>
         Niet je standaard waterfles.
 </h1>
+</div>
+<div class="ModelContainer">
+<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.0.0/model-viewer.min.js"></script>
+
+<model-viewer alt="cube" 
+src="Assets/models/untitled.glb" 
+
+poster="Assets/models/untitled.glb" 
+shadow-intensity="1" 
+camera-controls touch-action="pan-y" 
+generate-schema></model-viewer>
 </div>
 </main>
 <div class="Maintext">
@@ -47,6 +58,10 @@
                 </figure>
                 </div>
                 <h2 name="OntdekLiPrijs">Prijs: </h2> 
+                <?php 
+                // echo include 'Assets/ToevoegenWinkelwagenButton.php';
+                // $ID = $Product_ID[$i];
+                ?>
               </li>
               </a>
               <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=3">

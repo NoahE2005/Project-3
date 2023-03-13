@@ -44,7 +44,7 @@
         <p>
         $Product_Beschrijving[$i]
         </p>
-        "; echo include '/Project-3/Assets/ToevoegenWinkelwagenButton.php'; 
+        "; echo include '../../Assets/ToevoegenWinkelwagenButton.php'; 
         $ID = $Product_ID[$i]; echo"
     </div>
     <div>

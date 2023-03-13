@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 21 feb 2023 om 13:27
+-- Gegenereerd op: 13 mrt 2023 om 14:21
 -- Serverversie: 10.4.25-MariaDB
 -- PHP-versie: 8.1.10
 
@@ -32,18 +32,35 @@ CREATE TABLE `accounts` (
   `Username` varchar(50) NOT NULL,
   `Email` varchar(20) NOT NULL,
   `Password` varchar(25) NOT NULL,
-  `Foto` varchar(999) NOT NULL
+  `Foto` varchar(999) NOT NULL,
+  `Thema` varchar(999) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
-INSERT INTO `accounts` (`ID`, `Username`, `Email`, `Password`, `Foto`) VALUES
-(1, 'Admin', 'Admin@Admin.com', '123', ''),
-(2, 'steve', 'steve@e.com', '45', ''),
-(3, 'John', 'john@email.com', 'zws', ''),
-(4, 'zo', 'zo.zo@yahoo.com', 'wacht', '');
+INSERT INTO `accounts` (`ID`, `Username`, `Email`, `Password`, `Foto`, `Thema`) VALUES
+(1, 'Admin', 'Admin@Admin.com', '123', '', ''),
+(2, 'steve', 'steve@e.com', '45', '', ''),
+(3, 'John', 'john@email.com', 'zws', '', ''),
+(4, 'zo', 'zo.zo@yahoo.com', 'wacht', '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Tabelstructuur voor tabel `bestellingen`
+--
+
+CREATE TABLE `bestellingen` (
+  `bestelling_ID` int(255) NOT NULL,
+  `Account_ID` varchar(999) NOT NULL,
+  `Product_ID` varchar(999) NOT NULL,
+  `Klant_Adres` varchar(999) NOT NULL,
+  `Klant_Land` varchar(999) NOT NULL,
+  `Klant_Datum` varchar(999) NOT NULL,
+  `Klant_BestelNummer` varchar(999) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -185,9 +202,11 @@ INSERT INTO `producten` (`ID`, `Soort`, `Naam`, `Foto`, `Prijs`, `Aantal`, `Besc
 CREATE TABLE `reviews` (
   `ID` int(6) NOT NULL,
   `Product_ID` int(255) NOT NULL,
+  `Account_ID` varchar(999) NOT NULL,
   `Naam` varchar(999) NOT NULL,
   `Email` varchar(999) NOT NULL,
   `Sterren` int(1) NOT NULL,
+  `ReviewTitel` varchar(999) NOT NULL,
   `Datum` varchar(999) NOT NULL,
   `Beschrijving` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -196,13 +215,11 @@ CREATE TABLE `reviews` (
 -- Gegevens worden geëxporteerd voor tabel `reviews`
 --
 
-INSERT INTO `reviews` (`ID`, `Product_ID`, `Naam`, `Email`, `Sterren`, `Datum`, `Beschrijving`) VALUES
-(1, 5, 'Piet', 'sam.pieter@yahoo.com', 4, '2023-02-13 16:30:23', 'Beste product'),
-(2, 5, 'Bob', 'Bob.wit@email.com', 5, '2023-02-13 16:31:01', 'goed'),
-(3, 5, 'jan', 'jan@e.nl', 5, '2023-02-13 16:44:36', 'geweldig'),
-(4, 6, 'Piet', 'sam.pieter@yahoo.com', 4, '2023-02-13 16:59:31', 'Best een goed product'),
-(5, 5, 'Steve E', 'test@gstar.su', 4, '2023-02-13 19:56:27', 'Goede prijs kwaliteit verhouding'),
-(6, 2, 'Bob', 'Bob.wit@email.com', 4, '2023-02-16 08:36:29', 'goed');
+INSERT INTO `reviews` (`ID`, `Product_ID`, `Account_ID`, `Naam`, `Email`, `Sterren`, `ReviewTitel`, `Datum`, `Beschrijving`) VALUES
+(1, 43, '2', 'John', 'john@email.com', 5, 'Goed', '2023-02-24 10:40:13', 'Best een goed product'),
+(2, 3, '2', 'John', 'john@email.com', 4, 'Goed', '2023-02-24 10:41:57', 'Mooie kleur, ik ben er blij mee'),
+(3, 11, '2', 'John', 'john@email.com', 5, 'Beste smaak', '2023-02-24 10:43:19', 'heel lekker'),
+(4, 10, '3', 'zo', 'zo.zo@yahoo.com', 4, 'Heel goed', '2023-02-24 10:45:07', 'ik hou van dit product!');
 
 -- --------------------------------------------------------
 
@@ -225,6 +242,12 @@ CREATE TABLE `winkelwagen` (
 --
 ALTER TABLE `accounts`
   ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexen voor tabel `bestellingen`
+--
+ALTER TABLE `bestellingen`
+  ADD PRIMARY KEY (`bestelling_ID`);
 
 --
 -- Indexen voor tabel `contact`
@@ -258,7 +281,13 @@ ALTER TABLE `winkelwagen`
 -- AUTO_INCREMENT voor een tabel `accounts`
 --
 ALTER TABLE `accounts`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT voor een tabel `bestellingen`
+--
+ALTER TABLE `bestellingen`
+  MODIFY `bestelling_ID` int(255) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT voor een tabel `contact`
@@ -276,7 +305,7 @@ ALTER TABLE `producten`
 -- AUTO_INCREMENT voor een tabel `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `ID` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT voor een tabel `winkelwagen`

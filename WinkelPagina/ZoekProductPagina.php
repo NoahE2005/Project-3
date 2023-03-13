@@ -10,7 +10,7 @@
 </head>
 <body>
 <?php require '../DatabasePuller.php'; ?>
-<?php include '../Navigatie.php';?>
+<?php include '../Assets/Navigatie.php';?>
 <?php
 $PriceSlider = isset($_POST["PriceSlider"]) ? floatval($_POST["PriceSlider"]) : 50;
 $ZoekProductText = isset($_POST["ZoekProductText"]) ? $_POST["ZoekProductText"] : "";
@@ -156,7 +156,7 @@ function GetResultaten() {
         </div>
 
 
-        <?php include '../Footer.php';?>
+        <?php include '../Assets/Footer.php';?>
 </body>
 <script src="/Project-3/WinkelPagina/ZoekProductPaginaApp.js"></script>
 <script>SliderTextChange()</script>

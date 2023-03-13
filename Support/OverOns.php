@@ -9,8 +9,8 @@
     <title>Document</title>
 </head>
 <body>
-<?php require '../../DatabasePuller.php'; ?>
-<?php include '../../Assets/Navigatie.php';?>
+<?php require '../DatabasePuller.php'; ?>
+<?php include '../Assets/Navigatie.php';?>
 <div class="GezondheidHeader">
     <h1>
     Over pods up®
@@ -171,7 +171,7 @@ Een oplossing die voldoet aan de hoge eisen van onze generatie, omdat we niet wi
         </div>
 
 
-        <?php include '../../Assets/Footer.php';?>
+        <?php include '../Assets/Footer.php';?>
 </body>
 <script>
     function openPage(pageName, elmnt, color) {

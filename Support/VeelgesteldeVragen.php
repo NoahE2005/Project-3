@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php include '../../Assets/Navigatie.php';?>
+<?php include '../Assets/Navigatie.php';?>
 
 <section class="VGVpurple">
     <div>
@@ -203,7 +203,7 @@
         </div>
 
 
-        <?php include '../../Assets/ContactFooter.php';?>
+        <?php include '../Assets/ContactFooter.php';?>
 </body>
 <script src="/Project-3/App.js"></script>
 </html>

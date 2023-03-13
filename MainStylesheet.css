@@ -20,12 +20,12 @@ html, body {
     font-family: 'Proxima Nova', sans-serif;
 }
 
-main div {
+main .HeaderPurple {
     background: linear-gradient(
       75deg,
       var(--Maincolor) 0%,
-      var(--Maincolor) 40%,
-      rgba(175, 238, 238, 0) 40%,
+      var(--Maincolor) 65%,
+      rgba(175, 238, 238, 0) 65%,
       rgba(175, 238, 238, 0) 100%
     );
     color: var(--TextColor);
