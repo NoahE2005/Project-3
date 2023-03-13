@@ -86,8 +86,7 @@ echo "
         <input type="button" value="+" onclick="Add(1)">
       </div>
       <br>
-      <input type="submit" name="WinkelWagenSubmit" class="PurpleButton" value="<?php echo $CurrentID; ?>">
-      <label for="WinkelWagenSubmit">Toevoegen aan WinkelWagen</label>
+      <button type="submit" name="WinkelWagenSubmit" class="PurpleButton" value="<?php echo $CurrentID; ?>">Toevoegen aan WinkelWagen</button>
     </form>
 
     </div>
