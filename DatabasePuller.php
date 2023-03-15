@@ -19,6 +19,7 @@ try {
     $Account_Email = [];
     $Account_Password = [];
     $Account_Foto = [];
+    $Account_Foto_Type = [];
     $Account_Thema = [];
 
     foreach($result as $row) { //Database info toevoegen aan alle Arrays
@@ -27,6 +28,7 @@ try {
         array_push($Account_Email, $row['Email']);
         array_push($Account_Password, $row['Password']);
         array_push($Account_Foto, $row['Foto']);
+        array_push($Account_Foto_Type, $row['Foto_Type']);
         array_push($Account_Thema, $row['Thema']);
     }
 

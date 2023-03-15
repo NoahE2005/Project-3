@@ -20,18 +20,24 @@ if (isset($_SESSION['account_id'])) {
   <?php
 function GetPic() {
   global $Account_Foto_Type;
-  global $Account_Foto_Data;
   global $CurrentAccount_ID;
   global $Account_Foto;
+  global $Account_Username;
 
-  $foto = $Account_Foto[$CurrentAccount_ID];
+  $username = $Account_Username[$CurrentAccount_ID];
 
-  if ($foto) {
-    return 'data:' . $Account_Foto_Type[$CurrentAccount_ID] . ';base64,' . base64_encode($foto);
+  // Check if the file for the account exists
+  $fileName = "AccountImage-" . $username . "." . $Account_Foto_Type[$CurrentAccount_ID];
+  $filePath = "AccountSettings/AccountImage/" . $fileName;
+  if (file_exists($filePath)) {
+    // Return the image data
+    return $filePath;
   } else {
+    // Return the default profile picture
     return "/Project-3/Assets/Video_Assets/Image/AccountDefaultProfilePic.png";
   }
 }
+
 
 ?>
   <body>
@@ -108,10 +114,14 @@ function GetPic() {
         <div id="Settings" class="tabcontent">
           <h1>Settings</h1>
           <div>
-          <form action="AccountSettings/Foto_Insert.php" method="post">
+          <form action="AccountSettings/Foto_Insert.php" method="post" enctype="multipart/form-data">
   <label for="file">Choose a file:</label>
-  <input type="file" name="file" id="file"><br>
+  <input type="file" name="file" id="file" accept="image/*"><br>
   <input type="submit" value="Upload" name="submit">
+  <br><br>
+</form>
+<form action="AccountSettings/Foto_Delete.php" method="post">
+  <input type="submit" value="Reset to default">
 </form>
           </div>
         </div>
