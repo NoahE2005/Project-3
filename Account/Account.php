@@ -114,6 +114,7 @@ function GetPic() {
         <div id="Settings" class="tabcontent">
           <h1>Settings</h1>
           <div>
+            <h2>Foto veranderen</h2>
           <form action="AccountSettings/Foto_Insert.php" method="post" enctype="multipart/form-data">
   <label for="file">Choose a file:</label>
   <input type="file" name="file" id="file" accept="image/*"><br>
@@ -131,12 +132,12 @@ function GetPic() {
             echo "
             <div id='AdminTools' class='tabcontent'>
             <h1>AdminTools</h1>
-            <p>
+            <div>
 
 
-            <button class='collapsible'>
-  <span class='icon'>&#9660;</span>
-  Hoe registreerd je brein smaak?
+<button class='collapsible'>
+<span class='icon'>&#9660;</span>
+Hoe registreerd je brein smaak?
 </button>
  <div class='content'>
   <p>
@@ -158,6 +159,7 @@ Producten
 <p>
 ";
 $headers = array_unique(array_keys($Product_All[0]));
+$table = "";
 
 echo "<table>";
 echo "<tr>";
@@ -170,14 +172,35 @@ echo "</tr>";
 
 foreach($Product_All as $row) {
     echo "<tr>";
-    foreach($headers as $header) {
+    foreach($row as $header) {
         echo "<td>";
-        echo $row[$header];
+        echo $header;
         echo "</td>";
     }
     echo "</tr>";
 }
 echo "</table>";
+
+// $table .= "<table>";
+// $table .= "<tr>";
+// foreach($headers as $header) {
+//   $table .= "<th>";
+//   $table .= $header;
+//   $table .= "</th>";
+// }
+// $table .= "</tr>";
+
+// foreach($Product_All as $row) {
+//   $table .= "<tr>";
+//     foreach($row as $header) {
+//       $table .= "<td>";
+//       $table .= $header;
+//       $table .= "</td>";
+//     }
+//     $table .= "</tr>";
+// }
+// $table .= "</table>";
+// echo $table;
 echo
 "
 </p>
@@ -198,7 +221,7 @@ Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier ku
 </p>
 </div>
 
-            </p>
+            </div>
           </div>
 
           <script src='../App.js'></script>
