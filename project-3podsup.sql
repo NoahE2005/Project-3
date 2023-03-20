@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 13 mrt 2023 om 14:21
+-- Gegenereerd op: 20 mrt 2023 om 14:47
 -- Serverversie: 10.4.25-MariaDB
 -- PHP-versie: 8.1.10
 
@@ -33,6 +33,7 @@ CREATE TABLE `accounts` (
   `Email` varchar(20) NOT NULL,
   `Password` varchar(25) NOT NULL,
   `Foto` varchar(999) NOT NULL,
+  `Foto_Type` varchar(999) NOT NULL,
   `Thema` varchar(999) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -40,11 +41,11 @@ CREATE TABLE `accounts` (
 -- Gegevens worden geëxporteerd voor tabel `accounts`
 --
 
-INSERT INTO `accounts` (`ID`, `Username`, `Email`, `Password`, `Foto`, `Thema`) VALUES
-(1, 'Admin', 'Admin@Admin.com', '123', '', ''),
-(2, 'steve', 'steve@e.com', '45', '', ''),
-(3, 'John', 'john@email.com', 'zws', '', ''),
-(4, 'zo', 'zo.zo@yahoo.com', 'wacht', '', '');
+INSERT INTO `accounts` (`ID`, `Username`, `Email`, `Password`, `Foto`, `Foto_Type`, `Thema`) VALUES
+(1, 'Admin', 'Admin@Admin.com', '123', '', '', ''),
+(2, 'steve', 'steve@e.com', '45', '', '', ''),
+(3, 'John', 'john@email.com', 'zws', '', 'jpg', ''),
+(4, 'zo', 'zo.zo@yahoo.com', 'wacht', '', 'jpg', '');
 
 -- --------------------------------------------------------
 
