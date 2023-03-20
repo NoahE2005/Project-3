@@ -9,8 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+    <?php require '../DatabasePuller.php'; ?>
+    <?php include '../Assets/Navigatie.php';?>
 <?php
-session_start();
+// session_start();
 // controleer of de "add-to-cart" knop is geklikt
 if(isset($_POST["add-to-cart"])){
 
