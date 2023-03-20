@@ -11,7 +11,10 @@
             <a href="/Project-3/Gezondheid/Gezondheid.php">Gezondheid</a>
         </ul>
         </div>
-        <div class="FooterLinearGradientPurple">
+        <div class="FooterLinearGradientPurple"></div>
+        
+
+        <div>
             <h2>
             Schrijf je in
             </h2>
