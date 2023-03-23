@@ -34,10 +34,10 @@ generate-schema></model-viewer>
         <section>
           <div class="ShuffleDiv">
             <h2>
-                Ontdek nieuwe producten
+                Ontdek nieuwe producten:
             </h2>
             
-            <button class="ShuffleButton" onclick='Shuffle(
+            <button class="ShuffleButton PurpleButton" onclick='Shuffle(
               <?php echo json_encode($Product_ID); ?>, 
               <?php echo json_encode($Product_Soort); ?>,
               <?php echo json_encode($Product_Naam); ?>,
@@ -51,39 +51,49 @@ generate-schema></model-viewer>
             <div class="OntdekProducten">
               <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
-                <h1 name="OntdekLiH1">1</h1>
                 <div class="OntdekLiImgZoom">
                   <figure>
                 <img name="OntdekLiImg" class="OntdekLiImg">
                 </figure>
                 </div>
-                <h2 name="OntdekLiPrijs">Prijs: </h2> 
-                <?php 
-                // echo include 'Assets/ToevoegenWinkelwagenButton.php';
-                // $ID = $Product_ID[$i];
-                ?>
+                <h1 name="OntdekLiH1">1</h1>
+                <h2 name="OntdekLiPrijs">€ </h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                  <input type="hidden" name="aantal" id="AantalInput" value="1">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                </form>
               </li>
               </a>
+
               <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=3">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
-                <h1 name="OntdekLiH1">2</h1>
                 <div class="OntdekLiImgZoom">
                   <figure>
                 <img name="OntdekLiImg" class="OntdekLiImg">
             </figure>
             </div>
-                <h2 name="OntdekLiPrijs">Prijs: </h2> 
+            <h1 name="OntdekLiH1">2</h1>
+                <h2 name="OntdekLiPrijs">€ </h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                <input type="hidden" name="aantal" id="AantalInput" value="1">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                </form>
               </li>
             </a>
+
             <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=2">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
-                <h1 name="OntdekLiH1">3</h1>
                 <div class="OntdekLiImgZoom">
                   <figure>
                 <img name="OntdekLiImg" class="OntdekLiImg">
             </figure>
             </div>
-                <h2 name="OntdekLiPrijs">Prijs: </h2> 
+            <h1 name="OntdekLiH1">3</h1>
+                <h2 name="OntdekLiPrijs">€ </h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                  <input type="hidden" name="aantal" id="AantalInput" value="1">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                </form>
               </li>
             </a>
 

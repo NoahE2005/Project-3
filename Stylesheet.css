@@ -109,8 +109,9 @@ main h1 {
   list-style: none;
   width: 20vw;
   height: 25vw;
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(255, 255, 255);
   text-align: center;
+  box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.43);
 }
 
 
@@ -422,17 +423,18 @@ main h1 {
 }
 
 .OntdekLiImg {
-  width: 100%;
+  width: 105%;
   height: 110%;
-  max-width: 100%;
-  max-height: 110%;
+  max-width: 110%;
+  max-height: 105%;
   display: inline-block;
 }
 
 figure {
   overflow: hidden;
-  margin: 0 10px;
+  margin: 0;
 }
+
 
 .OntdekLiImgZoom {
   display:block;
@@ -746,4 +748,9 @@ figure {
 
 .GezondheidHeader h1 {
   font-size: 3vw;
+}
+
+.ButtonWidth {
+  width: 80%;
+  min-width: 80%;
 }
