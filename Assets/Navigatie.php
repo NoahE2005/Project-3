@@ -39,7 +39,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {session_start();}
     <div class="HeaderDiv">
 
             <div class="dropdown" onclick="location.href='/Project-3/Account/Load_Account.php'">
-            <button class="dropbtn"><i class="fa fa-user-circle Fa-Icon" style="font-size:2.5vw"></i></button>
+            <button class="dropbtn Icons1"><i class="fa fa-user-circle Fa-Icon" style="font-size:2.5vw"></i></button>
             <?php if (isset($_SESSION['account_id'])) {
                 $ovz = "Overzicht";
                 $rev = "Reviews";
@@ -56,7 +56,7 @@ if(session_status() !== PHP_SESSION_ACTIVE) {session_start();}
                 ';
                 } ?>
 </div>
-            <button class="dropbtn" onclick="location.href='/Project-3/WinkelPagina/WinkelWagen.php'"><li class="fa fa-shopping-cart Fa-Icon" style="font-size:2.5vw"></li></button>
+            <button class="dropbtn Icons2" onclick="location.href='/Project-3/WinkelPagina/WinkelWagen.php'"><li class="fa fa-shopping-cart Fa-Icon" style="font-size:2.5vw"></li></button>
         </div>
     </body>
 
@@ -192,6 +192,10 @@ nav {
   transition: top 0.7s;
 }
 
+.Icon1, .Icon2 {
+    transition: 0.7s;
+}
+
 .dropbtn {
   font-size: 16px;
   border: none;
@@ -243,6 +247,8 @@ nav {
     <script>
 const navbar = document.querySelector('nav');
 const headerDiv = document.querySelector('.HeaderDiv');
+const Icon1 = document.querySelector('.Icons1');
+const Icon2 = document.querySelector('.Icons2');
 let prevScrollpos = window.pageYOffset;
 
 window.onscroll = function() {
@@ -250,9 +256,13 @@ window.onscroll = function() {
   if (prevScrollpos > currentScrollPos) {
     navbar.style.top = '4.7vh';
     headerDiv.style.top = '4.7vh';
+    //Icon1.style.opacity = '1';
+    //Icon2.style.opacity = '1';
   } else {
     navbar.style.top = '-7.3vh';
     headerDiv.style.top = '-7.3vh';
+    //Icon1.style.opacity = '0';
+    //Icon2.style.opacity = '0';
   }
   prevScrollpos = currentScrollPos;
 }

@@ -32,15 +32,6 @@ try {
         array_push($Account_Thema, $row['Thema']);
     }
 
-    // var_dump($Account_ID);
-    // echo "<br>";
-    // var_dump($Account_Email);
-    // echo "<br>";
-    // var_dump($Account_Password);
-    //     echo "<br>";
-
-
-
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
@@ -74,21 +65,6 @@ try {
 
     }
 
-    // var_dump($Product_ID);
-    // echo "<br>";
-    // var_dump($Product_Soort);
-    // echo "<br>";
-    // var_dump($Product_Naam);
-    // echo "<br>";
-    // var_dump($Product_Foto);
-    // echo "<br>";
-    // var_dump($Product_Prijs);
-    // echo "<br>";
-    // var_dump($Product_Aantal);
-    // echo "<br>";
-    // var_dump($Product_Beschrijving);
-    // echo "<br>";
-
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
@@ -101,7 +77,7 @@ try {
 
     $result = $stmt->fetchAll();
 
-    //Product array maken
+    //Review array maken
     $Reviews_All = $result;
     $Reviews_ID = [];
     $Reviews_Product_ID = [];
@@ -126,25 +102,33 @@ try {
 
     }
 
-    // var_dump($Reviews_ID);
-    // echo "<br>";
-    // var_dump($Reviews_Product_ID);
-    // echo "<br>";
-    // var_dump($Reviews_Naam);
-    // echo "<br>";
-    // var_dump($Reviews_Email);
-    // echo "<br>";
-    // var_dump($Reviews_Sterren);
-    // echo "<br>";
-    // var_dump($Reviews_Datum);
-    // echo "<br>";
-    // var_dump($Reviews_Beschrijving);
-    // echo "<br>";
-
 } catch(PDOException $e) {
     echo "Error: " . $e->getMessage();
 }
 
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM winkelwagen"); 
+    $stmt->execute();
+
+    $result = $stmt->fetchAll();
+
+    //Review array maken
+    $Winkelwagen_All = $result;
+    $Winkelwagen_ID = [];
+    $Winkelwagen_Aantal = [];
+    $Wineklwagen_Product_ID = [];
+
+    foreach($result as $row) { //Database info toevoegen aan alle Arrays
+        array_push($Winkelwagen_ID, $row['Winkelwagen_ID']);
+        array_push($Winkelwagen_Aantal, $row['Aantal']);
+        array_push($Wineklwagen_Product_ID, $row['Product_ID']);
+    }
+
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
 
 $conn = null;
 

@@ -82,7 +82,8 @@ echo "
     <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
       <div class="ProductAantal">
         <input type="button" value="-" onclick="Add(-1)">
-        <h2 name="aantal" id="AantalText">1</h2>
+        <input type="hidden" name="aantal" id="AantalInput" value="1">
+        <h2 id="AantalText">1</h2>
         <input type="button" value="+" onclick="Add(1)">
       </div>
       <br>
@@ -138,6 +139,8 @@ echo "
     else{
       Aantal = 1;
     }
+    var aantalText = document.getElementById('AantalText').innerText;
+    document.getElementById('AantalInput').value = aantalText;
   }
 </script>
 </html>
