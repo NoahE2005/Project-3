@@ -410,16 +410,49 @@ main h1 {
 }
 
 .ContactForm {
-  margin: 10vw 20vw;
+  margin: 10vw 10vw;
   padding: 2vw;
-  background-color: rgb(233, 233, 233);
-  border: black 0.1vw solid;
+  background-color: white;
+  border: none;
   border-radius: 1vw;
+  box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.45);
+}
+
+.ContactForm h1 {
+  font-size: 2.5vw;
 }
 
 .ContactForm textarea {
-  max-width: 37vw;
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 8vw;
   max-height: 30vw;
+}
+
+.ContactForm input[type=text] , .select, .ContactForm textarea, .ContactForm input[type=email] {
+  width: 100%;
+  padding: 0.6vw 0;
+  border-radius: 0.4vw;
+  border: black 0.1vw solid;
+}
+
+.ContactForm input[type=file] {
+  border-radius: 0.2vw;
+}
+
+.ContactForm input[type=submit] {
+  background-color: orange;
+  color: white;
+  border-radius: 0.2vw;
+  border: none;
+  padding: 0.7vw;
+  transition: 0.4s;
+}
+
+.ContactForm input[type=submit]:hover {
+  cursor: pointer;
+  background-color: rgb(255, 200, 97);
+  transition: 0.4s;
 }
 
 .OntdekLiImg {

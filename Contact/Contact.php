@@ -10,6 +10,15 @@
 </head>
 <body>
 <?php include '../Assets/Navigatie.php';?>
+
+<main class="ProductGradient">
+      <div>
+        <h1>
+        Contact.
+</h1>
+</div>
+</main>
+
 <div class="Maintext">
 
 <div class="ContactForm">
@@ -28,7 +37,7 @@
     <p>
         Land
     </p>
-    <select name="Land" id="Land">
+    <select class="select" name="Land" id="Land">
     <option value=""></option>
     <option value="Australië">Australië</option>
     <option value="Oostenrijk">Oostenrijk</option>
@@ -49,7 +58,7 @@
   <p>
     Verkooppunt
   </p>
-  <select name="Verkooppunt" id="Verkooppunt">
+  <select class="select" name="Verkooppunt" id="Verkooppunt">
     <option value=""></option>
     <option value="Pods-Up.com">Pods-Up.com</option>
     <option value="Amazon">Amazon</option>
@@ -59,7 +68,7 @@
   <p>
     Hoe kunnen wij je helpen
   </p>
-  <select name="Helpen" id="Helpen">
+  <select class="select" name="Helpen" id="Helpen">
     <option value=""></option>
     <option value="Waar-is-mijn-bestelling?">Waar is mijn bestelling?</option>
     <option value="Aanpassen-of-annuleren-van-mijn-bestelling">Aanpassen of annuleren van mijn bestelling</option>

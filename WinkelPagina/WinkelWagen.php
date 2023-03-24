@@ -58,6 +58,14 @@ require '../DatabasePuller.php';
 <body>
     <?php include '../Assets/Navigatie.php';?>
 
+    <main class="ProductGradient">
+      <div>
+        <h1>
+        Winkelwagen.
+</h1>
+</div>
+</main>
+
 <?php
 if(count($Winkelwagen_ID) > 0) {
     $Subtotaal = 0;
@@ -165,16 +173,16 @@ if(count($Winkelwagen_ID) > 0) {
 
     <tr>
     <td>
-    <h1>Totaal</h1>
+    <h3>Totaal</h3>
     </td>
     <td>
-    <h1>€ $prijstotaal</h1>
+    <h3>€ $prijstotaal</h3>
     </td>
     </tr>
 
     <tr>
     <td>
-    <form method='POST' action=''>
+    <form method='POST' action='Bestellings.php'>
     <button type='submit' class='PurpleButton'>Bestel</button>
     </form>
     </td>
@@ -197,15 +205,16 @@ echo"</div>";
         width: 54vw;
         padding: 1rem;
         margin-bottom: 1rem;
-        background-color: #f5f5f5;
-        border-radius: 5px;
+        border-radius: 0.5vw;
         margin: 1.6vw 8vw;
+        border: purple 0.12vw solid;
     } 
 
     .winkelwagenHeader {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         margin: 0 8vw;
     }
 
@@ -217,6 +226,10 @@ echo"</div>";
     .Winkelwagen_A {
         color: #333;
         text-decoration: none;
+    }
+
+    .winkelwagenTitel {
+        font-size: 3vw;
     }
 
     .product-card h1 {
@@ -238,6 +251,14 @@ echo"</div>";
         padding: 2vw;
         display: flex;
         max-width: 25vw;
+    }
+
+    .WinkelwagenTable h1 {
+        font-size: 2vw;
+    }
+
+    .WinkelwagenTable h3 {
+        font-size: 1.5vw;
     }
 
     .WinkelwagenTable tr {

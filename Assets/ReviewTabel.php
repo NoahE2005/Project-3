@@ -45,17 +45,17 @@ echo "
 
     <h2>Sterrenrating</h2>
     <div class='rating'>
-      <input type='radio' id='star5' name='SterrenRating' value='5'/>
-      <label for='star5' title='Fantastisch'>5 sterren</label>
-      <input type='radio' id='star4' name='SterrenRating' value='4'/>
-      <label for='star4' title='Goed'>4 sterren</label>
-      <input type='radio' id='star3' name='SterrenRating' value='3'/>
-      <label for='star3' title='Gemiddeld'>3 sterren</label>
-      <input type='radio' id='star2' name='SterrenRating' value='2'/>
-      <label for='star2' title='Slecht'>2 sterren</label>
-      <input type='radio' id='star1' name='SterrenRating' value='1'/>
-      <label for='star1' title='Waardeloos'>1 ster</label>
-    </div>
+    <input type='radio' id='star5' name='SterrenRating' value='5'/>
+    <label for='star5' title='Fantastisch'>&#9733;</label>
+    <input type='radio' id='star4' name='SterrenRating' value='4'/>
+    <label for='star4' title='Goed'>&#9733;</label>
+    <input type='radio' id='star3' name='SterrenRating' value='3'/>
+    <label for='star3' title='Gemiddeld'>&#9733;</label>
+    <input type='radio' id='star2' name='SterrenRating' value='2'/>
+    <label for='star2' title='Slecht'>&#9733;</label>
+    <input type='radio' id='star1' name='SterrenRating' value='1'/>
+    <label for='star1' title='Waardeloos'>&#9733;</label>
+  </div>
     <br>
 
     <h2>Titel</h2>
@@ -148,6 +148,34 @@ echo "
 
 .ReviewTabelElement h1 {
   font-size: 1.5vw;
+}
+
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 30px;
+  line-height: 30px;
+  font-size: 24px;
+}
+.rating input {
+  display: none;
+}
+.rating label {
+  color: #bbb;
+  float: right;
+}
+.rating label:before {
+  content: "\f005";
+  font-family: FontAwesome;
+  margin-right: 5px;
+  color: #F2B600;
+}
+.rating input:checked + label:before {
+  color: #FCD000;
+}
+.rating:hover input:not(:checked) + label:before,
+.rating:hover input:not(:checked) + label:hover:before {
+  color: #FCD000;
 }
     </style>
     <script>

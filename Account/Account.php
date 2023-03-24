@@ -137,15 +137,34 @@ function GetPic() {
 
 <button class='collapsible'>
 <span class='icon'>&#9660;</span>
-Hoe registreerd je brein smaak?
+Account
 </button>
  <div class='content'>
   <p>
-    Het merendeel van wat we proeven, komt van onze olfactorische receptoren (dat deel van ons lichaam dat een centrale rol speelt in ons gevoel van geur).
-
-    <br><br>
-
-   Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier kunnen we smaak aan water 'toevoegen'. Onze flessen zorgen ervoor dat de geur die in onze pods zit, geregistreerd kan worden met elke slok.
+  "
+  ?>
+<table class="TableAdmin">
+  <tr>
+    <th>ID</th>
+    <th>Username</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Foto</th>
+    <th>Foto Type</th>
+  </tr>
+  <?php for ($i = 0; $i < count($Account_ID); $i++) { ?>
+    <tr>
+      <td><?php echo $Account_ID[$i]; ?></td>
+      <td><?php echo $Account_Username[$i]; ?></td>
+      <td><?php echo $Account_Email[$i]; ?></td>
+      <td><?php echo $Account_Password[$i]; ?></td>
+      <td><?php echo $Account_Foto[$i]; ?></td>
+      <td><?php echo $Account_Foto_Type[$i]; ?></td>
+    </tr>
+  <?php } ?>
+</table>
+<?php
+echo "
   </p>
  </div>
 
@@ -159,48 +178,32 @@ Producten
 <p>
 ";
 $headers = array_unique(array_keys($Product_All[0]));
-$table = "";
 
-echo "<table>";
-echo "<tr>";
-foreach($headers as $header) {
-    echo "<th>";
-    echo $header;
-    echo "</th>";
-}
-echo "</tr>";
+?>
+<table class="TableAdmin">
+  <tr>
+    <th>ID</th>
+    <th>Soort</th>
+    <th>Naam</th>
+    <th>Foto</th>
+    <th>Prijs</th>
+    <th>Aantal</th>
+    <th>Beschrijving</th>
+  </tr>
+  <?php for ($i = 0; $i < count($Product_ID); $i++) { ?>
+    <tr>
+      <td><?php echo $Product_ID[$i]; ?></td>
+      <td><?php echo $Product_Soort[$i]; ?></td>
+      <td><?php echo $Product_Naam[$i]; ?></td>
+      <td><?php echo $Product_Foto[$i]; ?></td>
+      <td><?php echo $Product_Prijs[$i]; ?></td>
+      <td><?php echo $Product_Aantal[$i]; ?></td>
+      <td><?php echo $Product_Beschrijving[$i]; ?></td>
+    </tr>
+  <?php } ?>
+</table>
 
-foreach($Product_All as $row) {
-    echo "<tr>";
-    foreach($row as $header) {
-        echo "<td>";
-        echo $header;
-        echo "</td>";
-    }
-    echo "</tr>";
-}
-echo "</table>";
-
-// $table .= "<table>";
-// $table .= "<tr>";
-// foreach($headers as $header) {
-//   $table .= "<th>";
-//   $table .= $header;
-//   $table .= "</th>";
-// }
-// $table .= "</tr>";
-
-// foreach($Product_All as $row) {
-//   $table .= "<tr>";
-//     foreach($row as $header) {
-//       $table .= "<td>";
-//       $table .= $header;
-//       $table .= "</td>";
-//     }
-//     $table .= "</tr>";
-// }
-// $table .= "</table>";
-// echo $table;
+<?php
 echo
 "
 </p>
@@ -209,15 +212,42 @@ echo
 
 <button class='collapsible'>
 <span class='icon'>&#9660;</span>
-Hoe registreerd je brein smaak?
+Reviews
 </button>
 <div class='content'>
 <p>
-  Het merendeel van wat we proeven, komt van onze olfactorische receptoren (dat deel van ons lichaam dat een centrale rol speelt in ons gevoel van geur).
+";
+?>
 
-  <br><br>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Product ID</th>
+    <th>Account ID</th>
+    <th>Naam</th>
+    <th>Email</th>
+    <th>Sterren</th>
+    <th>Datum</th>
+    <th>Titel</th>
+    <th>Beschrijving</th>
+  </tr>
+  <?php for ($i = 0; $i < count($Reviews_ID); $i++) { ?>
+    <tr>
+      <td><?php echo $Reviews_ID[$i]; ?></td>
+      <td><?php echo $Reviews_Product_ID[$i]; ?></td>
+      <td><?php echo $Reviews_Account_ID[$i]; ?></td>
+      <td><?php echo $Reviews_Naam[$i]; ?></td>
+      <td><?php echo $Reviews_Email[$i]; ?></td>
+      <td><?php echo $Reviews_Sterren[$i]; ?></td>
+      <td><?php echo $Reviews_Datum[$i]; ?></td>
+      <td><?php echo $Reviews_Titel[$i]; ?></td>
+      <td><?php echo $Reviews_Beschrijving[$i]; ?></td>
+    </tr>
+  <?php } ?>
+</table>
 
-Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier kunnen we smaak aan water 'toevoegen'. Onze flessen zorgen ervoor dat de geur die in onze pods zit, geregistreerd kan worden met elke slok.
+<?php
+echo "
 </p>
 </div>
 
@@ -225,6 +255,13 @@ Alles wat we doen wordt mogelijk gemaakt door retronasale geur, op die manier ku
           </div>
 
           <script src='../App.js'></script>
+          <style>
+          .TableAdmin tr td {
+            max-width: 8vw;
+            inline-size: 8vw;
+            overflow-wrap: break-word;
+          }
+          </style>
             ";
           }
           ?>
