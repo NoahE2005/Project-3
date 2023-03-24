@@ -51,8 +51,12 @@
         <p>
         $Product_Beschrijving[0]
         </p>
-        "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
-        $ID = $Product_ID[0]; echo"
+
+        <form action='/Project-3/WinkelPagina/WinkelWagen.php' method='post'>
+        <input type='hidden' name='aantal' id='AantalInput' value='1'>
+        <button type='submit' name='WinkelWagenSubmit' class='PurpleButton' value='0'>Toevoegen aan WinkelWagen</button>
+      </form>
+
     </div>
     <div>
     <h1>
@@ -73,8 +77,12 @@
                 <p>
                 $Product_Beschrijving[1]
                 </p>
-                "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
-                $ID = $Product_ID[1]; echo"
+
+                <form action='/Project-3/WinkelPagina/WinkelWagen.php' method='post'>
+                <input type='hidden' name='aantal' id='AantalInput' value='1'>
+                <button type='submit' name='WinkelWagenSubmit' class='PurpleButton' value='1'>Toevoegen aan WinkelWagen</button>
+              </form>
+        
             </div>
             <div>
             <h1>
@@ -111,8 +119,12 @@
         <p>
         $Product_Beschrijving[$i]
         </p>
-        "; echo include '../../Assets/ToevoegenWinkelwagenButton.php';
-        $ID = $Product_ID[$i]; echo"    
+
+        <form action='/Project-3/WinkelPagina/WinkelWagen.php' method='post'>
+        <input type='hidden' name='aantal' id='AantalInput' value='1'>
+        <button type='submit' name='WinkelWagenSubmit' class='PurpleButton' value='$i'>Toevoegen aan WinkelWagen</button>
+      </form>
+
     </div>
     <div>
     <h1>

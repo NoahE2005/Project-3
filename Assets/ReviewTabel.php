@@ -44,11 +44,18 @@ echo "
     <h2 value='$CurrentID'></h2>
 
     <h2>Sterrenrating</h2>
-    <input type='radio' value='1' name='SterrenRating'> 1
-    <input type='radio' value='2' name='SterrenRating'> 2
-    <input type='radio' value='3' name='SterrenRating'> 3
-    <input type='radio' value='4' name='SterrenRating'> 4
-    <input type='radio' value='5' name='SterrenRating'> 5
+    <div class='rating'>
+      <input type='radio' id='star5' name='SterrenRating' value='5'/>
+      <label for='star5' title='Fantastisch'>5 sterren</label>
+      <input type='radio' id='star4' name='SterrenRating' value='4'/>
+      <label for='star4' title='Goed'>4 sterren</label>
+      <input type='radio' id='star3' name='SterrenRating' value='3'/>
+      <label for='star3' title='Gemiddeld'>3 sterren</label>
+      <input type='radio' id='star2' name='SterrenRating' value='2'/>
+      <label for='star2' title='Slecht'>2 sterren</label>
+      <input type='radio' id='star1' name='SterrenRating' value='1'/>
+      <label for='star1' title='Waardeloos'>1 ster</label>
+    </div>
     <br>
 
     <h2>Titel</h2>
@@ -58,12 +65,12 @@ echo "
     <input type='text' name='Beschrijving' required>
     <br><br>
     ";
-if (isset($_SESSION['account_id'])) {
-    echo "<input type='button' value='Annuleren' onclick='ToggleReview()' class='OrangeButton'><input type='submit' class='OrangeButton'>";
-}
-else {
-  echo "<input type='button' value='U moet in gelogd zijn' onclick='ToggleReview()' class='OrangeButton'>";
-}
+    if (isset($_SESSION['account_id'])) {
+        echo "<input type='button' value='Annuleren' onclick='ToggleReview()' class='OrangeButton'><input type='submit' class='OrangeButton'>";
+    }
+    else {
+      echo "<input type='button' value='U moet in gelogd zijn' onclick='ToggleReview()' class='OrangeButton'>";
+    }
 echo "
 </form>
 <br><br>";
