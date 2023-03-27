@@ -24,13 +24,18 @@
 
 <div class="BestelPage">
         <div class="BestelDiv1">
-                <h1>
-                Contactinformatie
-                </h1>
-                <table>
+                <table class="BestelTable">
+                <form action="Bestel/Bestel.php" method="POST">
+                        <tr>
+                                <th>
+                                        <h1>
+                                        Contactinformatie
+                                        </h1>
+                                </th>
+                        </tr>
                         <tr>
                                 <td>
-                                <input type="email" placeholder="E-mail" required>
+                                <input type="email" class="BestelTableFull BestelButton" placeholder="E-mail" required>
                                 </td>
                         </tr>
 
@@ -43,7 +48,7 @@
                         </tr>
                         <tr>
                                 <td>
-                                <select class="select" name="Land" id="Land">
+                                <select class="select BestelTableFull" name="Land" id="Land">
                                   <option value=""></option>
                                   <option value="Australië">Australië</option>
                                   <option value="Oostenrijk">Oostenrijk</option>
@@ -74,25 +79,31 @@
                                 <td>
                                 <input type="text" placeholder="Bedrijf (optioneel)">
                                 </td>
-                        </tr>
-                        <tr>
                                 <td>
-                                <input type="text" placeholder="Straat">
-                                </td>
-                                <td>
-                                <input type="text" placeholder="Huisnummer">
+                                <input type="text" placeholder="Apertement nummer (optioneel)">
                                 </td>
                         </tr>
                         <tr>
                                 <td>
-                                <input type="text" placeholder="Postcode">
+                                <input type="text" placeholder="Straat" name="Straat">
+                                </td>
+                                <td>
+                                <input type="text" placeholder="Huisnummer" name="Huisenummber">
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>
+                                <input type="text" placeholder="Postcode" name="Postcode">
                                 </td>
                                 <td>
                                 <input type="text" placeholder="Stad">
                                 </td>
                         </tr>
                         <tr>
-                        <input type="submit" placeholder="Verzenden">
+                                <td>
+                        <input type="submit" value="Doorgaan met verzenden">
+                        </form>
+                        </td>
                         </tr>
                 </table>
         </div>
@@ -123,12 +134,12 @@
                 </div>
                 <div>
                         <table>
-                                <tr>
+                                <tr class="TableSubtotaalFlex">
                                         <td>
                                         Subtotaal
                                         </td>
                                         <td>
-                                        *prijs*
+                                        <?php echo $Subtotaal ?>
                                         </td>
                                 </tr>
                         </table>
@@ -145,18 +156,26 @@
            display: flex;
            align-items: center;
            justify-content: space-between;
+           flex-direction: row;
            max-width: 30vw;
-           width: 24vw;
+           width: 100%;
            padding: 1rem;
            margin-bottom: 1rem;
            background-color: #f5f5f5;
-           border-radius: 5px;
+           border-radius: 0.5vw;
            margin: 1.6vw 8vw;
+           border: purple 0.14vw solid;
     } 
 
     .order-card img {
         width: 120px;
         margin-right: 1rem;
+    }
+
+    .Winkelwagen_A {
+        text-decoration: none;
+        color: black;
+        width: 100%;
     }
 
         .BestelPage {
@@ -166,12 +185,70 @@
         }
 
         .BestelDiv1 {
-                width: 60%;
+                width: 55%;
         }
 
         .BestelDiv2 {
                 background-color: lightgray;
-                width: 40%;
+                width: 45%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+        }
+
+        .BestelDiv2 div {
+                margin-left: 0.4vw;
+        }
+
+        .BestelTable {
+                display: flex;
+                justify-content: flex-end;
+                margin-right: vw;
+        }
+
+        .BestelTable tr td input[type="text"], .BestelButton {
+                width: 22vw;
+                padding: 0.6vw;
+                margin: 0.3vw;
+                border-radius: 0.4vw;
+                border: solid 0.05vw grey;
+                transition: 0.5s;
+        }
+        
+        .BestelTable tr td input[type="text"]:hover, .BestelButton:hover {
+                border: solid 0.05vw purple;
+                transition: 0.5s;
+                box-shadow: 0px 0px 0.5vw 0px rgba(168,0,168,1);
+        }
+
+        .BestelTable tr td input[type="submit"] {
+                padding: 1.3vw;
+                background-color: orange;
+                color: white;
+                border: none;
+                border-radius: 0.4vw;
+                transition: 0.5s;
+        }
+
+        .BestelTable tr td input[type="submit"]:hover {
+                cursor: pointer;
+                background-color: orangered;
+                transition: 0.5s;
+        }
+
+        .BestelTableFull {
+                /* width: 22vw; */
+        }
+
+        .TableSubtotaalFlex {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: row;
+        }
+
+        .TableSubtotaalFlex td {
+                font-size: 1.9vw;
+                margin: 1vw 8vw;
         }
 </style>
 </html>
