@@ -39,6 +39,8 @@ if (isset($_SESSION['account_id'])) {
     // Check if the data was successfully inserted
     if ($stmt->affected_rows > 0) {
         echo "Data inserted successfully";
+        $sql = "TRUNCATE TABLE winkelwagen";
+        mysqli_query($conn, $sql);
     } else {
         echo "Error inserting data: " . $stmt->error;
     }

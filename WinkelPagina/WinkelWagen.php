@@ -103,7 +103,7 @@ if(count($Winkelwagen_ID) > 0) {
 
         <form method='POST' action=''>
         <input type='hidden' name='WinkelWagenDeleteSubmit' value='$Winkelwagen_ID[$i]'>
-        <button type='submit' class='PurpleButton'>Remove</button>
+        <button type='submit' class='PurpleButton'>Verwijder</button>
         </form>
 
         </div>
@@ -191,7 +191,7 @@ if(count($Winkelwagen_ID) > 0) {
     </table>";
 }
 else {
-    echo "<h1>Winkelwagen is leeg</h1>";
+    echo "<h1 class='LeegH1'>Uw winkelwagen is leeg</h1>";
 }
 echo"</div>";
         ?>
@@ -344,6 +344,12 @@ echo"</div>";
         margin-top: 8vw;
         margin-left: 8vw;
         font-size: 2vw;
+    }
+
+    .LeegH1 {
+        font-size: 3vw;
+        text-align: center;
+        margin-top: 8vw;
     }
 
 </style>

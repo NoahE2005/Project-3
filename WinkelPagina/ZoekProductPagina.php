@@ -81,7 +81,13 @@ function Valid($ID) {
 
 
 
-
+<main class="ProductGradient">
+      <div>
+        <h1>
+        Zoeken.
+</h1>
+</div>
+</main>
 <div>
 
 <div>

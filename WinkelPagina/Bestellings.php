@@ -186,6 +186,7 @@
 
         .BestelDiv1 {
                 width: 55%;
+                margin-right: 2vw;
         }
 
         .BestelDiv2 {
