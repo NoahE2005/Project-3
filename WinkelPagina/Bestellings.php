@@ -88,7 +88,7 @@
                                 <input type="text" placeholder="Straat" name="Straat">
                                 </td>
                                 <td>
-                                <input type="text" placeholder="Huisnummer" name="Huisenummber">
+                                <input type="text" placeholder="Huisnummer" name="Huisnummer">
                                 </td>
                         </tr>
                         <tr>
@@ -113,12 +113,12 @@
                        <?php 
                        $Subtotaal = 0;
                            for ($i=0; $i < count($Winkelwagen_ID); $i++) { 
-                                $index = $Wineklwagen_Product_ID[$i];
+                                $index = $Winkelwagen_Product_ID[$i];
                                 $totaal = floatval($Product_Prijs[$index]) * floatval($Winkelwagen_Aantal[$i]);
                                 $Subtotaal += $totaal;
                                 echo "
                         
-                                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Wineklwagen_Product_ID[$i]'>
+                                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Winkelwagen_Product_ID[$i]'>
                                 <div class='order-card'>
                                 <img src='$Product_Foto[$index]'>
                                 <div>
@@ -189,7 +189,7 @@
         }
 
         .BestelDiv2 {
-                background-color: lightgray;
+                background-color: rgb(234, 234, 234);
                 width: 45%;
                 display: flex;
                 flex-direction: column;

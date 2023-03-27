@@ -69,11 +69,70 @@ function GetPic() {
           <br>
 
           <h3>Laastse bestellingen</h3>
-          <!-- php code om de laaste 3 bestellingen van het account laten zien -->
+          <?php 
+              $validcounter = 0;
+          for ($i=0; $i < count($Bestelling_ID); $i++) { 
+            if($CurrentAccount_ID == $Bestelling_Account_ID[$i] &&  $validcounter <= 3) {
+              $ProductIDs = explode(", ", $Bestelling_Product_ID[$i]);
+              $validcounter++;
+              echo "<div class='BestellingCard'>
+              <h1>
+              Bestelling op $Bestelling_Klant_Datum[$i]
+              </h1>
+              ";
+              foreach ($ProductIDs as $id) {
+                echo " 
+                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Product_ID[$id]'>
+                <div class='order-card'>
+                <img src='$Product_Foto[$id]'>
+                <div>
+                    <h1>$Product_Naam[$id]</h1>
+                    <h2>$Product_Prijs[$id] per stuk</h2>
+                </div>
+        
+                </div>
+                </a>
+                ";
+              }
+              echo "
+              </div>";
+            }
+          }
+          ?>
         </div>
 
         <div id="Overzicht" class="tabcontent">
           <h1>Overzicht</h1>
+
+          <h3>All u bestellingen</h3>
+          <?php 
+          for ($i=0; $i < count($Bestelling_ID); $i++) { 
+            if($CurrentAccount_ID == $Bestelling_Account_ID[$i]) {
+              $ProductIDs = explode(", ", $Bestelling_Product_ID[$i]);
+              echo "<div class=''>
+              <h1>
+              Bestelling op $Bestelling_Klant_Datum[$i]
+              </h1>
+              ";
+              foreach ($ProductIDs as $id) {
+                echo " 
+                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Product_ID[$id]'>
+                <div class='order-card'>
+                <img src='$Product_Foto[$id]'>
+                <div>
+                    <h1>$Product_Naam[$id]</h1>
+                    <h2>$Product_Prijs[$id] per stuk</h2>
+                </div>
+        
+                </div>
+                </a>
+                ";
+              }
+              echo "
+              </div>";
+            }
+          }
+          ?>
         </div>
 
         <div id="Reviews" class="tabcontent">
@@ -357,6 +416,39 @@ table, tr, td {
 
     td {
       padding: 1vw;
+    }
+
+    .BestellingCard {
+      max-width: 60vw;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .order-card {
+           /* display: flex;
+           align-items: center;
+           justify-content: space-between;
+           flex-direction: row; */
+           max-width: 20vw;
+           width: 20vw;
+           height: 20vw;
+           max-height: 20vw;
+           padding: 1vw;
+           margin-bottom: 1rem;
+           background-color: #f5f5f5;
+           border-radius: 0.5vw;
+           margin: 1.6vw 1vw;
+           border: purple 0.14vw solid;
+    } 
+
+    .order-card img {
+        width: 10vw;
+        margin-right: 1rem;
+    }
+
+    .Winkelwagen_A {
+        text-decoration: none;
+        color: black;
+        width: 100%;
     }
     </style>
 </html>

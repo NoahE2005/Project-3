@@ -85,12 +85,12 @@ if(count($Winkelwagen_ID) > 0) {
 </div>
 ";
     for ($i=0; $i < count($Winkelwagen_ID); $i++) { 
-        $index = $Wineklwagen_Product_ID[$i];
+        $index = $Winkelwagen_Product_ID[$i];
         $totaal = floatval($Product_Prijs[$index]) * floatval($Winkelwagen_Aantal[$i]);
         $Subtotaal += $totaal;
         echo "
 
-        <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Wineklwagen_Product_ID[$i]'>
+        <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Winkelwagen_Product_ID[$i]'>
         <div class='product-card'>
         <img src='$Product_Foto[$index]'>
         <div>
@@ -156,7 +156,7 @@ if(count($Winkelwagen_ID) > 0) {
     </td>
     </tr>
     ";
-    if($totaal > 20) {
+    if($totaal < 20) {
         echo "<br>
         <tr>
         <td>
@@ -195,6 +195,73 @@ else {
 }
 echo"</div>";
         ?>
+
+
+<div>
+    <h1 class="populairH1">
+    Deze zijn nu SUPER populair:
+    </h1>
+    <br>
+    <?php 
+    $random_id1 = rand(0, count($Product_ID));
+    $random_id2 = rand(0, count($Product_ID));
+    $random_id3 = rand(0, count($Product_ID));
+    ?>
+    <div class="OntdekProducten">
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
+                <div class="OntdekLiImgZoom">
+                  <figure>
+                <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id1] ?>">
+                </figure>
+                </div>
+                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id1] ?></h1>
+                <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id1] ?></h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                  <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id1 ?>">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="<?php echo $random_id1 ?>">Toevoegen aan WinkelWagen</button>
+                </form>
+              </li>
+              </a>
+
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
+                <div class="OntdekLiImgZoom">
+                  <figure>
+                <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id2] ?>">
+                </figure>
+                </div>
+                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id2] ?></h1>
+                <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id2] ?></h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                  <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id2 ?>">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="<?php echo $random_id2 ?>">Toevoegen aan WinkelWagen</button>
+                </form>
+              </li>
+              </a>
+
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
+                <div class="OntdekLiImgZoom">
+                  <figure>
+                <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id3] ?>">
+                </figure>
+                </div>
+                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id3] ?></h1>
+                <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id3] ?></h2> 
+                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                  <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id3 ?>">
+                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="<?php echo $random_id3 ?>">Toevoegen aan WinkelWagen</button>
+                </form>
+              </li>
+              </a>
+</div>
+
+              <br>
+              <br>
+              <br>
+              <br>
+</div>
 
 <style>
     .product-card {
@@ -247,7 +314,7 @@ echo"</div>";
     }
 
     .WinkelwagenTable {
-        background-color: lightgrey;
+        background-color: rgb(234, 234, 234);
         padding: 2vw;
         display: flex;
         max-width: 25vw;
@@ -271,6 +338,12 @@ echo"</div>";
         flex-direction: row;
         flex-grow: 1;
         padding: 3vw;
+    }
+
+    .populairH1 {
+        margin-top: 8vw;
+        margin-left: 8vw;
+        font-size: 2vw;
     }
 
 </style>

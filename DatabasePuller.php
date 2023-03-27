@@ -118,12 +118,44 @@ try {
     $Winkelwagen_All = $result;
     $Winkelwagen_ID = [];
     $Winkelwagen_Aantal = [];
-    $Wineklwagen_Product_ID = [];
+    $Winkelwagen_Product_ID = [];
 
     foreach($result as $row) { //Database info toevoegen aan alle Arrays
         array_push($Winkelwagen_ID, $row['Winkelwagen_ID']);
         array_push($Winkelwagen_Aantal, $row['Aantal']);
-        array_push($Wineklwagen_Product_ID, $row['Product_ID']);
+        array_push($Winkelwagen_Product_ID, $row['Product_ID']);
+    }
+
+} catch(PDOException $e) {
+    echo "Error: " . $e->getMessage();
+}
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $stmt = $conn->prepare("SELECT * FROM bestellingen"); 
+    $stmt->execute();
+
+    $result = $stmt->fetchAll();
+
+    //Review array maken
+    $Bestelling_All = $result;
+    $Bestelling_ID = [];
+    $Bestelling_Account_ID = [];
+    $Bestelling_Product_ID = [];
+    $Bestelling_Klant_Adres = [];
+    $Bestelling_Klant_Land = [];
+    $Bestelling_Klant_Datum = [];
+    $Bestelling_Klant_Bestelnummer = [];
+
+    foreach($result as $row) { //Database info toevoegen aan alle Arrays
+        array_push($Bestelling_ID, $row['bestelling_ID']);
+        array_push($Bestelling_Account_ID, $row['Account_ID']);
+        array_push($Bestelling_Product_ID, $row['Product_ID']);
+        array_push($Bestelling_Klant_Adres, $row['Klant_Adres']);
+        array_push($Bestelling_Klant_Land, $row['Klant_Land']);
+        array_push($Bestelling_Klant_Datum, $row['Klant_Datum']);
+        array_push($Bestelling_Klant_Bestelnummer, $row['Klant_BestelNummer']);
     }
 
 } catch(PDOException $e) {

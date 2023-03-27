@@ -1,5 +1,6 @@
 <?php
 require '../../DatabasePuller.php'; 
+include '../../Assets/Navigatie.php';
 
 $servername = "localhost";
 $username = "root";
@@ -17,8 +18,8 @@ if ($conn->connect_error) {
 if (isset($_SESSION['account_id'])) {
     $account_id = $_SESSION['account_id'];
     $product_ids = "";
-    for ($i=0; $i < $Winkelwagen_ID; $i++) { 
-        $product_ids .= $Wineklwagen_Product_ID[$i];
+    for ($i=0; $i < count($Winkelwagen_ID); $i++) { 
+        $product_ids .= $Winkelwagen_Product_ID[$i];
         $product_ids .= ", ";
     }
     $klant_adres = $_POST['Straat'] . " " . $_POST['Huisnummer'] . ", " . $_POST['Postcode'];
@@ -62,7 +63,6 @@ $conn->close();
     <title>Document</title>
 </head>
 <body>
-<?php include '../../Assets/Navigatie.php';?>
 <!-- <main class="ProductGradient three">
       <div>
         <h1>
