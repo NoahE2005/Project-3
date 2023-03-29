@@ -191,7 +191,24 @@ if(count($Winkelwagen_ID) > 0) {
     </table>";
 }
 else {
-    echo "<h1 class='LeegH1'>Uw winkelwagen is leeg</h1>";
+    echo "
+    <div class='LeegDiv'>
+    <h1 class='LeegH1'>Uw winkelwagen is leeg.</h1>
+    <h2>Je winkelwagen is leeg. Voeg wat producten toe.</h2>
+
+    <a href='Flessen/Flessen.php'>
+    <button class='PurpleButton'>
+    Zoek Flessen
+    </button>
+    </a>
+
+    <a href='Pods/Pods.php'>
+    <button class='PurpleButton'>
+    Zoek Pods
+    </button>
+    </div>
+    </a>
+    ";
 }
 echo"</div>";
         ?>
@@ -346,10 +363,21 @@ echo"</div>";
         font-size: 2vw;
     }
 
-    .LeegH1 {
-        font-size: 3vw;
+    .LeegDiv {
         text-align: center;
         margin-top: 8vw;
+    }
+
+    .LeegDiv h1 {
+        font-size: 3vw;
+    }
+
+    .LeegDiv h2 {
+        font-size: 1vw;
+    }
+
+    .LeegDiv button {
+        margin: 1vw 3vw;
     }
 
 </style>
