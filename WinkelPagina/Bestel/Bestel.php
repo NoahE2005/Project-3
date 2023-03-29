@@ -62,18 +62,23 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
-    <title>Document</title>
+    <title>Bestel</title>
 </head>
 <body>
-<!-- <main class="ProductGradient three">
+<main class="ProductGradient three">
       <div>
         <h1>
-        Accessoires.
+        
 </h1>
 </div>
-</main> -->
+</main>
 <div class="Maintext">
 
+<div>
+    <img src="http://placehold.it/500x500"> <!-- Check mark -->
+    <h1>De Bestelling is geplaats!</h1>
+    <h2>In u account scherm kunt u die bestelling zien en bijhouden.</h2>
+</div>
 
 
 
