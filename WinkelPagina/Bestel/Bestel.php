@@ -38,11 +38,11 @@ if (isset($_SESSION['account_id'])) {
 
     // Check if the data was successfully inserted
     if ($stmt->affected_rows > 0) {
-        echo "Data inserted successfully";
+        //echo "Data inserted successfully";
         $sql = "TRUNCATE TABLE winkelwagen";
         mysqli_query($conn, $sql);
     } else {
-        echo "Error inserting data: " . $stmt->error;
+        //echo "Error inserting data: " . $stmt->error;
     }
 
     // Close the prepared statement and database connection
@@ -74,10 +74,12 @@ $conn->close();
 </main>
 <div class="Maintext">
 
-<div>
-    <img src="http://placehold.it/500x500"> <!-- Check mark -->
+<div class="BestelSuccess">
+    <img src="https://www.pngkey.com/png/full/445-4453331_checkmark-check-mark-in-a-circle.png"> <!-- Check mark -->
+    <div>
     <h1>De Bestelling is geplaats!</h1>
     <h2>In u account scherm kunt u die bestelling zien en bijhouden.</h2>
+    </div>
 </div>
 
 
@@ -85,4 +87,33 @@ $conn->close();
         </div>
         <?php include '../../Assets/Footer.php';?>
 </body>
+<style>
+.BestelSuccess {
+    text-align: center;
+  width: 100%;
+  margin: 6vw 0vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 1vw;
+  padding: 6vw 0vw;
+  box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.75);
+}
+
+.BestelSuccess img {
+    width: 20vw;
+    height: 20vw;
+}
+
+.BestelSuccess div h1 {
+    font-size: 3vw;
+}
+
+.BestelSuccess div h2 {
+    font-size: 2vw;
+    font-weight: normal;
+}
+
+</style>
 </html>

@@ -5,7 +5,7 @@
     $dbname = "project-3podsup";
     $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-    if(isset($_POST["WinkelWagenSubmit"])) {
+    if(isset($_POST["WinkelWagenSubmit"]) && isset($_SESSION['account_id'])) {
         $product_id = $_POST["WinkelWagenSubmit"];
         $product_quantity = $_POST["aantal"];
         
@@ -188,7 +188,9 @@ if(count($Winkelwagen_ID) > 0) {
     </td>
     </tr>
     </div>
+    </div>
     </table>";
+
 }
 else {
     echo "
@@ -206,8 +208,8 @@ else {
     <button class='PurpleButton'>
     Zoek Pods
     </button>
-    </div>
     </a>
+    </div>
     ";
 }
 echo"</div>";
@@ -378,6 +380,10 @@ echo"</div>";
 
     .LeegDiv button {
         margin: 1vw 3vw;
+    }
+
+    .LeegDiv a {
+        text-decoration: none;
     }
 
 </style>

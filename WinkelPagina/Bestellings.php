@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,15 +28,15 @@
                 <table class="BestelTable">
                 <form action="Bestel/Bestel.php" method="POST">
                         <tr>
-                                <th>
+                                <td>
                                         <h1>
                                         Contactinformatie
                                         </h1>
-                                </th>
+                                </td>
                         </tr>
                         <tr>
                                 <td>
-                                <input type="email" class="BestelTableFull BestelButton" placeholder="E-mail" required>
+                                <input type="email" class="BestelButton" placeholder="E-mail" required value="<?php echo $Account_Email[$_SESSION['account_id']] ?>">
                                 </td>
                         </tr>
 
@@ -48,7 +49,7 @@
                         </tr>
                         <tr>
                                 <td>
-                                <select class="select BestelTableFull" name="Land" id="Land">
+                                <select class="select" name="Land" id="Land">
                                   <option value=""></option>
                                   <option value="Australië">Australië</option>
                                   <option value="Oostenrijk">Oostenrijk</option>
@@ -109,7 +110,7 @@
         </div>
 
         <div class="BestelDiv2">
-                <div>
+                <div class="BestelProduct">
                        <?php 
                        $Subtotaal = 0;
                            for ($i=0; $i < count($Winkelwagen_ID); $i++) { 
@@ -146,6 +147,9 @@
                 </div>
         </div>
 </div>
+<br>
+<br>
+<br>
 
 
         <?php include '../Assets/Footer.php';?>
@@ -208,7 +212,7 @@
         }
 
         .BestelTable tr td input[type="text"], .BestelButton {
-                width: 22vw;
+                width: 17vw;
                 padding: 0.6vw;
                 margin: 0.3vw;
                 border-radius: 0.4vw;
@@ -229,16 +233,13 @@
                 border: none;
                 border-radius: 0.4vw;
                 transition: 0.5s;
+                margin-top: 1vw;
         }
 
         .BestelTable tr td input[type="submit"]:hover {
                 cursor: pointer;
                 background-color: orangered;
                 transition: 0.5s;
-        }
-
-        .BestelTableFull {
-                /* width: 22vw; */
         }
 
         .TableSubtotaalFlex {
@@ -248,8 +249,14 @@
         }
 
         .TableSubtotaalFlex td {
-                font-size: 1.9vw;
+                font-size: 1vw;
                 margin: 1vw 8vw;
         }
+
+        .BestelProduct {
+                border-bottom: grey 0.1vw solid;
+        }
+
+
 </style>
 </html>

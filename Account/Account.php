@@ -79,22 +79,31 @@ function GetPic() {
               <h1>
               Bestelling op $Bestelling_Klant_Datum[$i]
               </h1>
+              <div class='BestellingCardFlex'>
               ";
               foreach ($ProductIDs as $id) {
-                echo " 
-                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Product_ID[$id]'>
-                <div class='order-card'>
-                <img src='$Product_Foto[$id]'>
-                <div>
-                    <h1>$Product_Naam[$id]</h1>
-                    <h2>$Product_Prijs[$id] per stuk</h2>
-                </div>
-        
-                </div>
-                </a>
-                ";
-              }
+                if (isset($Product_ID[$id])) {
+                    echo " 
+                    <div class='Winkelwagen_Div'>
+                        <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$id'>
+                        <div class='order-card'>
+                        <img src='$Product_Foto[$id]'>
+                        <div>
+                            <h1>$Product_Naam[$id]</h1>
+                            <h2>$Product_Prijs[$id] per stuk</h2>
+                        </div>
+            
+                        </div>
+                        </a>
+                        </div>
+
+                        <br>
+                        <br>
+                    ";
+                }
+            }
               echo "
+              </div>
               </div>";
             }
           }
@@ -106,6 +115,8 @@ function GetPic() {
 
           <h3>All u bestellingen</h3>
           <?php 
+          echo "<div class='BestellingCard'>";
+          echo "<div class='BestellingCardFlex'>";
           for ($i=0; $i < count($Bestelling_ID); $i++) { 
             if($CurrentAccount_ID == $Bestelling_Account_ID[$i]) {
               $ProductIDs = explode(", ", $Bestelling_Product_ID[$i]);
@@ -115,23 +126,27 @@ function GetPic() {
               </h1>
               ";
               foreach ($ProductIDs as $id) {
-                echo " 
-                <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$Product_ID[$id]'>
-                <div class='order-card'>
-                <img src='$Product_Foto[$id]'>
-                <div>
-                    <h1>$Product_Naam[$id]</h1>
-                    <h2>$Product_Prijs[$id] per stuk</h2>
-                </div>
-        
-                </div>
-                </a>
-                ";
-              }
-              echo "
-              </div>";
+                if (isset($Product_ID[$id])) {
+                    echo " 
+                    <div class='Winkelwagen_Div'>
+                        <a class='Winkelwagen_A' href='/Project-3/WinkelPagina/ProductPagina.php?id=$id]'>
+                        <div class='order-card'>
+                        <img src='$Product_Foto[$id]'>
+                        <div>
+                            <h1>$Product_Naam[$id]</h1>
+                            <h2>$Product_Prijs[$id] per stuk</h2>
+                        </div>
+            
+                        </div>
+                        </a>
+                        </div>
+                    ";
+                }
             }
+            echo "</div>"; 
+            echo "</div>"; 
           }
+        }
           ?>
         </div>
 
@@ -420,18 +435,32 @@ table, tr, td {
 
     .BestellingCard {
       max-width: 60vw;
+
+      border: 0.1vw solid black;
+      box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.75);
+      padding: 1vw;
+      border-radius: 1vw;
+    }
+
+    .BestellingCardFlex {
       display: flex;
       flex-wrap: wrap;
+      flex-direction: row;
     }
+
+    .BestellingCardFlex div div h1 {
+      font-size: 1.5vw;
+    }
+
     .order-card {
            /* display: flex;
            align-items: center;
            justify-content: space-between;
            flex-direction: row; */
-           max-width: 20vw;
-           width: 20vw;
-           height: 20vw;
-           max-height: 20vw;
+           max-width: 15vw;
+           width: 15vw;
+           height: 15vw;
+           max-height: 15vw;
            padding: 1vw;
            margin-bottom: 1rem;
            background-color: #f5f5f5;
@@ -449,6 +478,10 @@ table, tr, td {
         text-decoration: none;
         color: black;
         width: 100%;
+    }
+
+    .Winkelwagen_Div {
+      margin-bottom: 1vw;
     }
     </style>
 </html>
