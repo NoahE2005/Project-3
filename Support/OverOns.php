@@ -21,12 +21,7 @@
 <section>
     <h1>Over ons</h1>
 </section>
-<div class="tablinkcontainer">
-<button class="tablink" onclick="openPage('Bedrijf', this, 'purple')" id="defaultOpen">Bedrijf</button>
-<button class="tablink" onclick="openPage('Personeel', this, 'purple')">Personeel</button>
-</div>
 
-<div id="Bedrijf" class="tabcontent">
   <h3>Bedrijf</h3>
   <div  class="tabcontentflex">
     <img src="https://nl.air-up.com/_ipx/f_webp,w_1800,q_75/https%3A%2F%2Fcdn.builder.io%2Fapi%2Fv1%2Fimage%2Fassets%252F29f6d30051fc461896a7817916d68d85%252F7bdb64cd32da4f15a6e5ad5cb691c7cf">
@@ -151,51 +146,12 @@ Een oplossing die voldoet aan de hoge eisen van onze generatie, omdat we niet wi
     <br>
 </div>
 
-</div>
 
-<div id="Personeel" class="tabcontent">
-  <h3>Personeel</h3>
-  <p>(text)</p>
-  <br>
-  <div>
-    <img>
-    <h1>
 
-    </h1>
-    <p>
-        
-    </p>
-  </div>
-</div>
 
         </div>
 
 
         <?php include '../Assets/Footer.php';?>
 </body>
-<script>
-    function openPage(pageName, elmnt, color) {
-  // Hide all elements with class="tabcontent" by default */
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  // Remove the background color of all tablinks/buttons
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-
-  // Show the specific tab content
-  document.getElementById(pageName).style.display = "block";
-
-  // Add the specific color to the button used to open the tab content
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script>
 </html>
