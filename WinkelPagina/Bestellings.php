@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
-    <title>Document</title>
+    <title>PodsUp/Bestellings</title>
 </head>
 <body>
 <?php require '../DatabasePuller.php'; ?>

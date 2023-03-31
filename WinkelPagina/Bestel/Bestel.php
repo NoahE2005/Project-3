@@ -62,7 +62,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
-    <title>Bestel</title>
+    <title>PodsUp/Bestel</title>
 </head>
 <body>
 <main class="ProductGradient three">

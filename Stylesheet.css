@@ -537,6 +537,101 @@ figure {
   min-width: 20vw;
 }
 
+.ZoekProductFilters #Accessoires, .ZoekProductFilters #Pods, .ZoekProductFilters #Fles  {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #f90;
+  border-radius: 4px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  top: 4px;
+}
+
+.ZoekProductFilters #Accessoires:checked:before, .ZoekProductFilters #Pods:checked:before, .ZoekProductFilters #Fles:checked:before {
+  content: "\2714";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 1px;
+  font-size: 20px;
+  color: #fff;
+}
+
+.ZoekProductFilters #Accessoires label, .ZoekProductFilters #Pods label, .ZoekProductFilters #Fles label {
+  display: inline-block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.checkbox-container {
+  margin: 10px 0;
+}
+
+.checkbox-container input[type="checkbox"]:checked + label {
+  color: #f90;
+}
+
+.checkbox-container input[type="checkbox"]:focus {
+  border-color: #333;
+}
+
+.checkbox-container input[type="checkbox"]:hover {
+  border-color: #333;
+}
+
+.FilterSlider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.FilterSlider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f90;
+  cursor: pointer;
+}
+
+.FilterSlider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #f90;
+  cursor: pointer;
+}
+
+.FilterSlider label {
+  display: block;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.slider-container {
+  margin-bottom: 20px;
+}
+
+#SliderText {
+  font-size: 18px;
+  font-weight: bold;
+  color: #f90;
+  text-align: center;
+}
+
 .ZoekProductText {
   width: 50vw;
   height: 3vw;

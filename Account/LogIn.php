@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="/Project-3/Stylesheet.css">
   <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
   <link rel="stylesheet" href="/Project-3/Account/AccountStylesheet.css">
+  <title>PodsUp/Login</title>
   </head>
 <body>
 <?php include '../Assets/Navigatie.php';?>

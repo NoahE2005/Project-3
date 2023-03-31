@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
-    <title>Document</title>
+    <title>PodsUp/Zoeken</title>
 </head>
 <body>
 <?php require '../DatabasePuller.php'; ?>
@@ -102,28 +102,51 @@ function Valid($ID) {
 <section class="ZoekProductSection">
 <div class="ZoekProductFilters">
     <h1>Filters</h1>
-    <label>Max prijs
-<input type="range" min="1" max="100" name="PriceSlider" value="<?php echo $PriceSlider ?>" class="slider" id="myRange">
-<h2 id="SliderText"></h2>
-</label>
+
+    <div class="slider-container">
+  <label for="myRange">Max prijs</label>
+  <input type="range" min="1" max="100" name="PriceSlider" value="<?php echo $PriceSlider ?>" class="FilterSlider" id="myRange">
+  <h2 id="SliderText"></h2>
+</div>
+
 
 <br><br>
 
-    <input type="checkbox" id="Fles" value="Fles" name="Fles" <?php echo $CheckBoxFles ?>><label>Fles</label>
-    <br>
-    <input type="checkbox" id="Pods" value="Pods" name="Pods" <?php echo $CheckBoxPods ?>><label>Pods</label>
-    <br>
-    <input type="checkbox" id="Accessoires" value="Accessoires" name="Accessoires" <?php echo $CheckBoxAccessoires ?>><label>Accessoires</label>
+<div class="checkbox-container">
+  <input type="checkbox" id="Fles" value="Fles" name="Fles" <?php echo $CheckBoxFles ?>>
+  <label for="Fles">Fles</label>
+</div>
+
+<div class="checkbox-container">
+  <input type="checkbox" id="Pods" value="Pods" name="Pods" <?php echo $CheckBoxPods ?>>
+  <label for="Pods">Pods</label>
+</div>
+
+<div class="checkbox-container">
+  <input type="checkbox" id="Accessoires" value="Accessoires" name="Accessoires" <?php echo $CheckBoxAccessoires ?>>
+  <label for="Accessoires">Accessoires</label>
+</div>
+
     <br><br>
     <input type="submit" class="OrangeButton" value="Submit">
     </form>
 </div>
+
+<?php 
+$Valid_IDs = 0;
+for ($i = 0; $i < count($Product_ID) ; $i++) { 
+    if (Valid($i)) {
+    $Valid_IDs++;
+}
+}
+?>
+
 <div class="ZoekPaginaResultaten">
-    <h1>Resultaten: <?php echo GetResultaten() ?></h1>
+    <h1>Resultaten: <?php echo $Valid_IDs ?></h1>
 
     <?php for ($i = 0; $i < count($Product_ID) ; $i++) { 
     if (Valid($i)) {
-    $Valid_IDs = $Product_ID[$i];
+    $Valid_IDs++;
     echo "
     <a class='ProductLinks' href='/Project-3/WinkelPagina/ProductPagina.php?id=$i'>
     <div class='ZoekPaginaResultatenElement'>

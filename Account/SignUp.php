@@ -3,6 +3,7 @@
   <head>
   <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
   <link rel="stylesheet" href="/Project-3/Account/AccountStylesheet.css">
+  <title>PodsUp/Signup</title>
   </head>
 <body>
 <?php

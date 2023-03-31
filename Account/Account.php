@@ -15,6 +15,7 @@ if (isset($_SESSION['account_id'])) {
   <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
     <link rel="stylesheet" href="/Project-3/Account/AccountStylesheet.css">
+    <title>PodsUp/Account</title>
   </head>
 
   <?php
@@ -65,7 +66,6 @@ function GetPic() {
 
         <div id="Account" class="tabcontent">
           <h1>Welkom terug <?php echo $Account_Username[$CurrentAccount_ID] ?>!</h1>
-          <p>(text over account)</p>
           <br>
 
           <h3>Laastse bestellingen</h3>
@@ -435,10 +435,10 @@ table, tr, td {
 
     .BestellingCard {
       max-width: 60vw;
-
       border: 0.1vw solid black;
-      box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.75);
+      box-shadow: 0px 0px 0.2vw 0px rgba(0,0,0,0.75);
       padding: 1vw;
+      margin: 1vw;
       border-radius: 1vw;
     }
 

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/Project-3/Stylesheet.css">
     <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
+    <title>PodsUp/VGV</title>
 </head>
 <body>
 <?php include '../Assets/Navigatie.php';?>
