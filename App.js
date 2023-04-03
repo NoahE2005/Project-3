@@ -19,7 +19,7 @@ function Shuffle(ID, Soort, Naam, Foto, Prijs, Aantal,) {
   let ShuffleLiImg = document.getElementsByName("OntdekLiImg");
   let ShufflePrijsText = document.getElementsByName("OntdekLiPrijs");
   let ProductLinks = document.getElementsByClassName("ProductLinks");
-  let Submit = document.getElementsByClassName("WinkelwagenSubmit");
+  let Submit = document.getElementsByName("OntdekSubmit");
 
   for (i = 0; i < ShuffleLi.length; i++) {
     console.log(i + "Shuffle");
@@ -36,13 +36,14 @@ function Shuffle(ID, Soort, Naam, Foto, Prijs, Aantal,) {
     //Voeg nieuw product toe
     let NewID = Math.floor(Math.random() * ID.length);//Willekeurige ID maken
 
-    Submit.value = NewID; //Fix
-
     ShuffleLiImg[i].src = Foto[NewID]; //Foto wijzigen
     ShuffleLiH1[i].innerHTML = "" + Naam[NewID];
     ShufflePrijsText[i].innerHTML = "€ " + Prijs[NewID];
 
     ProductLinks[i].href = "/Project-3/WinkelPagina/ProductPagina.php?id=" + NewID;
+
+    Submit[i].value = NewID;
+
     console.log(ProductLinks[i].href)
 
     // add animation again

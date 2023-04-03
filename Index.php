@@ -60,7 +60,7 @@ generate-schema></model-viewer>
                 <h2 name="OntdekLiPrijs">€ </h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="1">
-                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
                 </form>
               </li>
               </a>
@@ -76,7 +76,7 @@ generate-schema></model-viewer>
                 <h2 name="OntdekLiPrijs">€ </h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                 <input type="hidden" name="aantal" id="AantalInput" value="1">
-                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
                 </form>
               </li>
             </a>
@@ -92,7 +92,7 @@ generate-schema></model-viewer>
                 <h2 name="OntdekLiPrijs">€ </h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="1">
-                <button type="submit" name="WinkelWagenSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
+                <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
                 </form>
               </li>
             </a>
