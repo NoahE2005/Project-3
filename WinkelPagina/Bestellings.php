@@ -102,6 +102,9 @@
                         </tr>
                         <tr>
                                 <td>
+
+                                </td>
+                                <td>
                         <input type="submit" value="Doorgaan met verzenden">
                         </form>
                         </td>
@@ -135,12 +138,33 @@
                 </div>
                 <div>
                         <table>
+                                <?php
+                                if($Subtotaal < 20) {
+                                     echo "
+                                     <tr class='TableSubtotaalFlex'>
+                                     <td>
+                                     <strong>
+                                     Verzendkosten:
+                                     </strong>
+                                     </td>
+                                     <td>
+                                     20
+                                     </td>
+                             </tr>
+                                     ";   
+                                     $Subtotaal += 20;
+                                }
+                                ?>
                                 <tr class="TableSubtotaalFlex">
                                         <td>
-                                        Subtotaal
+                                                <strong>
+                                        Subtotaal:
+                                        </strong>
                                         </td>
-                                        <td>
+                                        <td class="SubtotaalText">
+                                                <p>
                                         <?php echo $Subtotaal ?>
+                                        </p>
                                         </td>
                                 </tr>
                         </table>
@@ -199,16 +223,31 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                border-left: rgb(214, 214, 214) solid 0.2vw;
+                border-bottom: rgb(214, 214, 214) solid 0.2vw;
         }
 
         .BestelDiv2 div {
                 margin-left: 0.4vw;
         }
 
+        .select {
+                border: solid 0.03vw rgb(214, 214, 214);
+                float: center;
+        }
+
         .BestelTable {
                 display: flex;
-                justify-content: flex-end;
-                margin-right: vw;
+                justify-content: center;
+                margin: 1vw 0vw;
+                padding: 2vw 0vw;
+                margin-left: 10vw;
+                border-radius: 1vw;
+                box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.45);
+        }
+
+        .BestelTable tr td input[type="text"]::placeholder {
+                color: rgb(180, 180, 180);
         }
 
         .BestelTable tr td input[type="text"], .BestelButton {
@@ -216,14 +255,14 @@
                 padding: 0.6vw;
                 margin: 0.3vw;
                 border-radius: 0.4vw;
-                border: solid 0.05vw grey;
+                border: solid 0.03vw rgb(214, 214, 214);
+                color: rgb(100, 100, 100);
                 transition: 0.5s;
         }
         
         .BestelTable tr td input[type="text"]:hover, .BestelButton:hover {
                 border: solid 0.05vw purple;
                 transition: 0.5s;
-                box-shadow: 0px 0px 0.5vw 0px rgba(168,0,168,1);
         }
 
         .BestelTable tr td input[type="submit"] {
@@ -234,6 +273,8 @@
                 border-radius: 0.4vw;
                 transition: 0.5s;
                 margin-top: 1vw;
+                float: right;
+                margin-right: 0.2vw;
         }
 
         .BestelTable tr td input[type="submit"]:hover {
@@ -246,6 +287,7 @@
                 display: flex;
                 justify-content: space-between;
                 flex-direction: row;
+                align-items: center;
         }
 
         .TableSubtotaalFlex td {
@@ -255,6 +297,10 @@
 
         .BestelProduct {
                 border-bottom: grey 0.1vw solid;
+        }
+
+        .SubtotaalText p {
+                font-size: 1.6vw;
         }
 
 

@@ -1,4 +1,6 @@
 <?php
+    include '../Assets/Navigatie.php';
+
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -56,7 +58,7 @@ require '../DatabasePuller.php';
     <title>PodsUp/Winkelwagen</title>
 </head>
 <body>
-    <?php include '../Assets/Navigatie.php';?>
+
 
     <main class="ProductGradient">
       <div>
@@ -222,12 +224,12 @@ echo"</div>";
     </h1>
     <br>
     <?php 
-    $random_id1 = rand(0, count($Product_ID));
-    $random_id2 = rand(0, count($Product_ID));
-    $random_id3 = rand(0, count($Product_ID));
+    $random_id1 = rand(0, count($Product_ID) - 1);
+    $random_id2 = rand(0, count($Product_ID) - 1);
+    $random_id3 = rand(0, count($Product_ID) - 1);
     ?>
     <div class="OntdekProducten">
-              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=<?php echo $random_id1 ?>">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
                 <div class="OntdekLiImgZoom">
                   <figure>
@@ -243,7 +245,7 @@ echo"</div>";
               </li>
               </a>
 
-              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=<?php echo $random_id2 ?>">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
                 <div class="OntdekLiImgZoom">
                   <figure>
@@ -259,7 +261,7 @@ echo"</div>";
               </li>
               </a>
 
-              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=4">
+              <a class="ProductLinks" href="/Project-3/WinkelPagina/ProductPagina.php?id=<?php echo $random_id3 ?>">
               <li id="OntdekLi" class="OntdekLiAnimate" name="OntdekLi">
                 <div class="OntdekLiImgZoom">
                   <figure>
@@ -274,13 +276,15 @@ echo"</div>";
                 </form>
               </li>
               </a>
+            
+</div>
 </div>
 
               <br>
               <br>
               <br>
               <br>
-</div>
+
 
 <style>
     .product-card {
@@ -387,8 +391,6 @@ echo"</div>";
     }
 
 </style>
-
-</div>
 <?php include '../Assets/Footer.php';?>
 </body>
 </html>

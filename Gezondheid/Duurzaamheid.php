@@ -22,12 +22,12 @@
 
 
 <section class="DuurzaamheidFlex">
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
+<iframe width="920" height="365"
+src="https://www.youtube.com/embed/Ij2fmEDcL9U">
 </iframe>
   <div>
     <h1>
-    sustainability by design
+    Sustainability by design
     </h1>
     <p>
     Lena Jüngst & Tim Jäger hebben air up® samen opgericht om mensen te helpen om duurzamer en gezonder te leven. Wij noemen het 'sustainability by design'.
@@ -37,8 +37,8 @@ src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
 </section>
 
 <section class="DuurzaamheidFlexR">
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
+<iframe width="920" height="365"
+src="https://www.youtube.com/embed/1kKoboHe1iM">
 </iframe>
   <div>
     <h1>
@@ -53,8 +53,8 @@ src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
 </section>
 
 <section class="DuurzaamheidFlex">
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
+<iframe width="920" height="365"
+src="https://www.youtube.com/embed/yC0dQ2AXNJ8">
 </iframe>
   <div>
     <h1>
@@ -68,8 +68,8 @@ src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
 </section>
 
 <section class="DuurzaamheidFlexR">
-<iframe width="420" height="315"
-src="https://www.youtube.com/watch?v=Ij2fmEDcL9U&ab_channel=airup">
+<iframe width="920" height="365"
+src="https://www.youtube.com/embed/z22UHTCmrZs">
 </iframe>
   <div>
     <h1>
