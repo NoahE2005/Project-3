@@ -1,22 +1,6 @@
 <?php require '/Xampp/htdocs/Project-3/DatabasePuller.php'; ?>
 <?php 
     $CurrentID = 3;
-echo "
-    <script>
-  var urlParams = new URLSearchParams(window.location.search);
-  var id = urlParams.get('id');
-  console.log(id);
-
-  var xhr = new XMLHttpRequest();
-  xhr.open('GET', '?id=' + id, true);
-  xhr.onreadystatechange = function() {
-    if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-      console.log(this.responseText);
-    }
-  };
-  xhr.send();
-</script>
-    ";
     if (isset($_GET['id'])) {
         $CurrentID = $_GET['id'];
       }
@@ -25,6 +9,7 @@ echo "
     <?php
     echo "
     <!-- Review maken -->
+    <div class='ReviewTabelForm'>
     <button class='OrangeButton' id='ReviewFormButton' onclick='ToggleReview()'>Review schrijven</button>
     <form action='/Project-3/Assets/Database/Create_Review.php?id=$CurrentID' id='ReviewForm' method='post'>
     <h2>Naam</h2>
@@ -62,17 +47,25 @@ echo "
     <input type='text' name='Titel' required>
     <br>
     <h2>Beschrijving</h2>
-    <input type='text' name='Beschrijving' required>
+    <input type='text' name='Beschrijving' class='ReviewBeschrijving' required>
     <br><br>
     ";
     if (isset($_SESSION['account_id'])) {
-        echo "<input type='button' value='Annuleren' onclick='ToggleReview()' class='OrangeButton'><input type='submit' class='OrangeButton'>";
+        echo "
+        <div class='ReviewTabelButton'>
+        <input type='button' value='Annuleren' onclick='ToggleReview()' class='OrangeButton'>
+        <input type='submit' class='OrangeButton'>
+        </div>";
     }
     else {
-      echo "<input type='button' value='U moet in gelogd zijn' onclick='ToggleReview()' class='OrangeButton'>";
+      echo "
+      <div class='ReviewTabelButton'>
+      <input type='button' value='U moet in gelogd zijn' onclick='ToggleReview()' class='OrangeButton'>
+      </div>";
     }
 echo "
 </form>
+</div>
 <br><br>";
 
 ?>
@@ -148,6 +141,40 @@ echo "
 
 .ReviewTabelElement h1 {
   font-size: 1.5vw;
+}
+
+.ReviewTabelButton input {
+  margin: 0vw 0.5vw;
+}
+
+.ReviewTabelForm form {
+  margin: 1vw 0vw;
+  padding: 2vw 25vw;
+  border-radius: 5vw;
+  box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.45);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.ReviewTabelForm form input[type="text"], .ReviewTabelForm form input[type="email"] {
+  width: 17vw;
+  padding: 0.6vw;
+  margin: 0.3vw;
+  border-radius: 0.4vw;
+  border: solid 0.03vw rgb(214, 214, 214);
+  color: rgb(100, 100, 100);
+  transition: 0.5s;
+}
+
+.ReviewTabelForm form input[type="text"]:hover, .ReviewTabelForm form input[type="email"]:hover {
+  border: solid 0.05vw purple;
+  transition: 0.5s;
+}
+
+.ReviewBeschrijving {
+  min-height: 10vw;
 }
 
 .rating {
