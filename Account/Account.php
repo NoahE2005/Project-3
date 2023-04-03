@@ -118,7 +118,7 @@ function GetPic() {
           echo "<div class='BestellingCard'>";
           echo "<div class='BestellingCardFlex'>";
           for ($i=0; $i < count($Bestelling_ID); $i++) { 
-            if($CurrentAccount_ID == $Bestelling_Account_ID[$i]) {
+            if($CurrentAccount_ID == $Bestelling_Account_ID[$i] && count($Bestelling_ID) > 0) {
               $ProductIDs = explode(", ", $Bestelling_Product_ID[$i]);
               echo "<div class=''>
               <h1>
@@ -183,7 +183,7 @@ function GetPic() {
     ?>
     </div>
     </div>
-        </div>
+  </div>
 
         <div id="Settings" class="tabcontent">
           <h1>Settings</h1>
@@ -341,6 +341,7 @@ echo "
           ?>
       </div>
     </div>
+        </div>
 
     <script src="../Account/App.js"></script>
     <?php include '../Assets/Footer.php';?>
