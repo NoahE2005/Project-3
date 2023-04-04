@@ -56,12 +56,12 @@ generate-schema></model-viewer>
                 <img name="OntdekLiImg" class="OntdekLiImg">
                 </figure>
                 </div>
-                <h1 name="OntdekLiH1">1</h1>
+                <h1 name="OntdekLiH1" class="OntdekLiH1Text">1</h1>
                 <h2 name="OntdekLiPrijs">€ </h2> 
-                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                <!-- <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="1">
                 <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
-                </form>
+                </form> -->
               </li>
               </a>
 
@@ -72,12 +72,12 @@ generate-schema></model-viewer>
                 <img name="OntdekLiImg" class="OntdekLiImg">
             </figure>
             </div>
-            <h1 name="OntdekLiH1">2</h1>
+            <h1 name="OntdekLiH1" class="OntdekLiH1Text">2</h1>
                 <h2 name="OntdekLiPrijs">€ </h2> 
-                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                <!-- <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                 <input type="hidden" name="aantal" id="AantalInput" value="1">
                 <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
-                </form>
+                </form> -->
               </li>
             </a>
 
@@ -88,12 +88,12 @@ generate-schema></model-viewer>
                 <img name="OntdekLiImg" class="OntdekLiImg">
             </figure>
             </div>
-            <h1 name="OntdekLiH1">3</h1>
+            <h1 name="OntdekLiH1" class="OntdekLiH1Text">3</h1>
                 <h2 name="OntdekLiPrijs">€ </h2> 
-                <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
+                <!-- <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="1">
                 <button type="submit" name="WinkelWagenSubmit" id="OntdekSubmit" class="PurpleButton WinkelwagenSubmit ButtonWidth" value="1">Toevoegen aan WinkelWagen</button>
-                </form>
+                </form> -->
               </li>
             </a>
 

@@ -19,7 +19,7 @@ function Shuffle(ID, Soort, Naam, Foto, Prijs, Aantal,) {
   let ShuffleLiImg = document.getElementsByName("OntdekLiImg");
   let ShufflePrijsText = document.getElementsByName("OntdekLiPrijs");
   let ProductLinks = document.getElementsByClassName("ProductLinks");
-  let Submit = document.getElementsByName("OntdekSubmit");
+  //let Submit = document.getElementsByName("OntdekSubmit");
 
   for (i = 0; i < ShuffleLi.length; i++) {
     console.log(i + "Shuffle");
@@ -42,7 +42,7 @@ function Shuffle(ID, Soort, Naam, Foto, Prijs, Aantal,) {
 
     ProductLinks[i].href = "/Project-3/WinkelPagina/ProductPagina.php?id=" + NewID;
 
-    Submit[i].value = NewID;
+    //Submit[i].value = NewID;
 
     console.log(ProductLinks[i].href)
 

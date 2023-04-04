@@ -149,6 +149,7 @@ function GetPic() {
         }
           ?>
         </div>
+      </div>
 
         <div id="Reviews" class="tabcontent">
           <h1>Reviews</h1>

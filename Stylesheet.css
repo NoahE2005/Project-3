@@ -114,6 +114,10 @@ main h1 {
   box-shadow: 0px 0px 0.5vw 0px rgba(0,0,0,0.43);
 }
 
+.OntdekProducten li div img {
+  max-height: 15vw;
+}
+
 
 .RetronasaalFlex {
   display: flex;
@@ -143,6 +147,10 @@ main h1 {
 
 .OntdekLiAnimate {
   animation: ShuffleLiAnim 2s;
+}
+
+.OntdekLiH1Text {
+  font-size: 1.5vw;
 }
 
 .ShuffleDiv {

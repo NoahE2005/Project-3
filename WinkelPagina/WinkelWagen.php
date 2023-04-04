@@ -236,7 +236,7 @@ echo"</div>";
                 <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id1] ?>">
                 </figure>
                 </div>
-                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id1] ?></h1>
+                <h1 name="OntdekLiH1" class="OntdekLiH1Text"><?php echo $Product_Naam[$random_id1] ?></h1>
                 <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id1] ?></h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id1 ?>">
@@ -252,7 +252,7 @@ echo"</div>";
                 <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id2] ?>">
                 </figure>
                 </div>
-                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id2] ?></h1>
+                <h1 name="OntdekLiH1" class="OntdekLiH1Text"><?php echo $Product_Naam[$random_id2] ?></h1>
                 <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id2] ?></h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id2 ?>">
@@ -268,7 +268,7 @@ echo"</div>";
                 <img name="OntdekLiImg" class="OntdekLiImg" src="<?php echo $Product_Foto[$random_id3] ?>">
                 </figure>
                 </div>
-                <h1 name="OntdekLiH1"><?php echo $Product_Naam[$random_id3] ?></h1>
+                <h1 name="OntdekLiH1" class="OntdekLiH1Text"><?php echo $Product_Naam[$random_id3] ?></h1>
                 <h2 name="OntdekLiPrijs">€ <?php echo $Product_Prijs[$random_id3] ?></h2> 
                 <form action="/Project-3/WinkelPagina/WinkelWagen.php" method="post">
                   <input type="hidden" name="aantal" id="AantalInput" value="<?php echo $random_id3 ?>">
