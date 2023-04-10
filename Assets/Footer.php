@@ -1,5 +1,7 @@
 <html>
 <head>
+
+        <link rel="stylesheet" href="/Project-3/Stylesheet.css">
         <link rel="stylesheet" href="/Project-3/MainStylesheet.css">
     </head>
     <body>
@@ -49,7 +51,7 @@
 
 .FooterUl a {
     color: white;
-    color: grey;
+    color: white;
 }
 
 .FooterUl a:hover {
@@ -69,6 +71,7 @@ footer {
     background-color: rgb(215, 215, 215);
     padding: 4vw 0;
 }
+
 
     </style>
 </body>
